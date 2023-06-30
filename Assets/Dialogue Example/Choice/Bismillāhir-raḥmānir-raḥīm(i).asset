@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe0a2619e8b06848bef50b53fb6b40e, type: 3}
+  m_Name: "Bismill\u0101hir-ra\u1E25m\u0101nir-ra\u1E25\u012Bm(i)"
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - elementName: Kondisi
+    charName: Kamu
+    dialogueSentece: "Bismill\u0101hir-ra\u1E25m\u0101nir-ra\u1E25\u012Bm(i)"
+    charOrder: 0
+  isHasChoice: 0
+  choiceList: []

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe0a2619e8b06848bef50b53fb6b40e, type: 3}
+  m_Name: Pilih kondisi ketiga
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - elementName: Kondisi
+    charName: Kamu
+    dialogueSentece: Saya memilih kondisi ketiga
+    charOrder: 0
+  - elementName: Pilih Kondisi
+    charName: 
+    dialogueSentece: Pilih kondisi
+    charOrder: 4
+  isHasChoice: 1
+  choiceList:
+  - {fileID: 11400000, guid: 544177a31bb448f478d72dcd75d2147f, type: 2}
+  - {fileID: 11400000, guid: 55b0128e4b0bfb24ba9c41b37aac74cd, type: 2}
+  - {fileID: 11400000, guid: 2d72d4c04c6e41c4ba6b77db94c462ed, type: 2}
+  - {fileID: 11400000, guid: 9c0ba040de3570c4ca2438ed5a89e31c, type: 2}

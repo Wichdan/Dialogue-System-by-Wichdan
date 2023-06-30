@@ -18,9 +18,7 @@ MonoBehaviour:
     dialogueSentece: Assalamualaikum, perkenalkan namaku Nur Rahman, salam kenal.
       Bisa dipanggil Rahman
     charOrder: 0
-    portrait: {fileID: 21300000, guid: b9b4ab797426c3d4ba2550310f535c14, type: 3}
-    eyesCharCtrller: {fileID: 9100000, guid: 642a0e8a8c8e1de4bae23d5c9cad87e8, type: 2}
-    mouthCharCtrller: {fileID: 9100000, guid: f015bfb2b4d9b57429890f36f20f6fd7, type: 2}
+    portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
     eyesValue: 0
     mouthValue: 0
   - elementName: NPC
@@ -28,9 +26,7 @@ MonoBehaviour:
     dialogueSentece: Waalaikumsalam, salam kenal namaku Rahima Aqila. Panggil saja
       saya Aqila
     charOrder: 2
-    portrait: {fileID: 0}
-    eyesCharCtrller: {fileID: 0}
-    mouthCharCtrller: {fileID: 0}
+    portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
   - elementName: Player
@@ -38,36 +34,28 @@ MonoBehaviour:
     dialogueSentece: Mbak Aqila, sekolah dimana? kalau saya, kuliah semester 1 di
       Universitas Kudus
     charOrder: 0
-    portrait: {fileID: 21300000, guid: b9b4ab797426c3d4ba2550310f535c14, type: 3}
-    eyesCharCtrller: {fileID: 9100000, guid: 642a0e8a8c8e1de4bae23d5c9cad87e8, type: 2}
-    mouthCharCtrller: {fileID: 9100000, guid: f015bfb2b4d9b57429890f36f20f6fd7, type: 2}
+    portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
     eyesValue: 0
     mouthValue: 0
   - elementName: NPC
     charName: Aqila
     dialogueSentece: Aqila sekolah di SMK Persatuan Kudus, dan sekarang kelas 12
     charOrder: 2
-    portrait: {fileID: 0}
-    eyesCharCtrller: {fileID: 0}
-    mouthCharCtrller: {fileID: 0}
+    portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
   - elementName: Narrator
     charName: System
     dialogueSentece: Ini dialog sistem
     charOrder: 1
-    portrait: {fileID: 0}
-    eyesCharCtrller: {fileID: 0}
-    mouthCharCtrller: {fileID: 0}
+    portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
   - elementName: Choice
     charName: System
     dialogueSentece: Pilih kondisi
     charOrder: 3
-    portrait: {fileID: 0}
-    eyesCharCtrller: {fileID: 0}
-    mouthCharCtrller: {fileID: 0}
+    portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
   isHasChoice: 1

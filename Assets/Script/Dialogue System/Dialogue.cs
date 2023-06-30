@@ -21,11 +21,7 @@ public class Conversation
 
     [Header("Portrait Order")]
     public CharacterOrder charOrder;
-    public Sprite portrait;
-
-    [Header("Animation")]
-    public RuntimeAnimatorController eyesCharCtrller;
-    public RuntimeAnimatorController mouthCharCtrller;
+    public GameObject portraitData;
     [Range(0,1)]
     public float eyesValue, mouthValue;
     public enum CharacterOrder

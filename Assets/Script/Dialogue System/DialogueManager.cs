@@ -133,29 +133,33 @@ public class DialogueManager : MonoBehaviour
     {
         Image portraitImg = portrait[index].GetComponent<Image>();
 
-        if (dialogueRef.dialogueData[dialogueIndex].portrait != null)
-            portraitImg.sprite = dialogueRef.dialogueData[dialogueIndex].portrait;
+        if (dialogueRef.dialogueData[dialogueIndex].portraitData != null){
+            portraitImg.sprite = 
+            dialogueRef.dialogueData[dialogueIndex].portraitData.GetComponent<PortraitData>().portrait;
+        }
         else
             portrait[index].SetActive(false);
     }
 
     void SetEyesAnimation(int index)
     {
-        if (dialogueRef.dialogueData[dialogueIndex].eyesCharCtrller == null) return;
-        eyesAnim[index].runtimeAnimatorController = dialogueRef.dialogueData[dialogueIndex].eyesCharCtrller;
+        if (dialogueRef.dialogueData[dialogueIndex].portraitData == null) return;
+        eyesAnim[index].runtimeAnimatorController = 
+        dialogueRef.dialogueData[dialogueIndex].portraitData.GetComponent<PortraitData>().eyesCharCtrller;
         eyesAnim[index].SetFloat("eyesValue", dialogueRef.dialogueData[dialogueIndex].eyesValue);
     }
 
     void SetMouthAnimation(int index)
     {
-        if (dialogueRef.dialogueData[dialogueIndex].mouthCharCtrller == null) return;
-        mouthAnim[index].runtimeAnimatorController = dialogueRef.dialogueData[dialogueIndex].mouthCharCtrller;
+        if (dialogueRef.dialogueData[dialogueIndex].portraitData == null) return;
+        mouthAnim[index].runtimeAnimatorController = 
+        dialogueRef.dialogueData[dialogueIndex].portraitData.GetComponent<PortraitData>().mouthCharCtrller;
         mouthAnim[index].SetFloat("mouthValue", dialogueRef.dialogueData[dialogueIndex].mouthValue);
     }
 
     void SetTalkingAnimation(bool isTalk)
     {
-        if (dialogueRef.dialogueData[dialogueIndex].mouthCharCtrller == null) return;
+        if (dialogueRef.dialogueData[dialogueIndex].portraitData == null) return;
         int charOrder = (int)dialogueRef.dialogueData[dialogueIndex].charOrder;
         for (int i = 0; i < charNamePanel.Length; i++)
         {

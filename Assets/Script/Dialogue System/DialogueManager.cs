@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Other Reference")]
     [SerializeField] GameObject doneImg;
-    [SerializeField] GameObject dialoguePanel, conversationPanel;
+    [SerializeField] GameObject dialoguePanel, sentencePanel;
 
     [Header("Auto Next")]
     [SerializeField] bool isAuto;
@@ -212,7 +212,7 @@ public class DialogueManager : MonoBehaviour
     public void ShowHidePanel()
     {
         isHide = !isHide;
-        conversationPanel.SetActive(!isHide);
+        sentencePanel.SetActive(!isHide);
     }
 
     //button autonext

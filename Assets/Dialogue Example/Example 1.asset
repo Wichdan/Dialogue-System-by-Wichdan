@@ -18,7 +18,7 @@ MonoBehaviour:
     dialogueSentece: Assalamualaikum, perkenalkan namaku Nur Rahman, salam kenal.
       Bisa dipanggil Rahman
     charOrder: 0
-    portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
+    portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
   - elementName: NPC
@@ -34,7 +34,7 @@ MonoBehaviour:
     dialogueSentece: Mbak Aqila, sekolah dimana? kalau saya, kuliah semester 1 di
       Universitas Kudus
     charOrder: 0
-    portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
+    portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
   - elementName: NPC
@@ -44,8 +44,8 @@ MonoBehaviour:
     portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
-  - elementName: Narrator
-    charName: System
+  - elementName: Player
+    charName: Rahman
     dialogueSentece: Ini dialog sistem
     charOrder: 1
     portraitData: {fileID: 0}
@@ -58,6 +58,9 @@ MonoBehaviour:
     portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
+  autoFillPortraitData:
+  - charName: Rahman
+    portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
   isHasChoice: 1
   choiceList:
   - {fileID: 11400000, guid: cecf781556cc0e942a6711534d40f5c6, type: 2}

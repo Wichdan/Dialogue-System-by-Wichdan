@@ -41,10 +41,11 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Other Setting")]
     [SerializeField] bool isHide;
+    [SerializeField] bool isPlayOnStart;
 
     int dialogueIndex;
 
-    public static DialogueManager Instance;
+    public static DialogueManager singleton;
 
     private void Reset()
     {
@@ -54,13 +55,21 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (singleton != null && singleton != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            singleton = this;
+        }
     }
 
     private void Start()
     {
         ChangeTextSpeed();
-        StartDialogue();
+        if(isPlayOnStart)
+            StartDialogue();
     }
 
     private void OnEnable()
@@ -133,8 +142,9 @@ public class DialogueManager : MonoBehaviour
     {
         Image portraitImg = portrait[index].GetComponent<Image>();
 
-        if (dialogueRef.dialogueData[dialogueIndex].portraitData != null){
-            portraitImg.sprite = 
+        if (dialogueRef.dialogueData[dialogueIndex].portraitData != null)
+        {
+            portraitImg.sprite =
             dialogueRef.dialogueData[dialogueIndex].portraitData.GetComponent<PortraitData>().portrait;
         }
         else
@@ -144,7 +154,7 @@ public class DialogueManager : MonoBehaviour
     void SetEyesAnimation(int index)
     {
         if (dialogueRef.dialogueData[dialogueIndex].portraitData == null) return;
-        eyesAnim[index].runtimeAnimatorController = 
+        eyesAnim[index].runtimeAnimatorController =
         dialogueRef.dialogueData[dialogueIndex].portraitData.GetComponent<PortraitData>().eyesCharCtrller;
         eyesAnim[index].SetFloat("eyesValue", dialogueRef.dialogueData[dialogueIndex].eyesValue);
     }
@@ -152,7 +162,7 @@ public class DialogueManager : MonoBehaviour
     void SetMouthAnimation(int index)
     {
         if (dialogueRef.dialogueData[dialogueIndex].portraitData == null) return;
-        mouthAnim[index].runtimeAnimatorController = 
+        mouthAnim[index].runtimeAnimatorController =
         dialogueRef.dialogueData[dialogueIndex].portraitData.GetComponent<PortraitData>().mouthCharCtrller;
         mouthAnim[index].SetFloat("mouthValue", dialogueRef.dialogueData[dialogueIndex].mouthValue);
     }

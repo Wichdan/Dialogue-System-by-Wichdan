@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe0a2619e8b06848bef50b53fb6b40e, type: 3}
+  m_Name: Example 2
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - elementName: Player
+    charName: Rahman
+    dialogueSentece: Assalamualaikum, perkenalkan namaku Nur Rahman, salam kenal.
+      Bisa dipanggil Rahman
+    charOrder: 0
+    portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: NPC
+    charName: '?'
+    dialogueSentece: Waalaikumsalam, salam kenal namaku Ammar
+    charOrder: 2
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  autoFillPortraitData:
+  - charName: Rahman
+    portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
+  isHasChoice: 0
+  choiceList: []
+  background: {fileID: 21300000, guid: 703c106a08ed86741b2564aaa6d61a74, type: 3}
+  isUseTransition: 1
+  updateSomething: 0

@@ -10,20 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fe0a2619e8b06848bef50b53fb6b40e, type: 3}
-  m_Name: Pilih kondisi ketiga
+  m_Name: Pilih kondisi keempat
   m_EditorClassIdentifier: 
   dialogueData:
   - elementName: Kondisi
     charName: Kamu
-    dialogueSentece: Saya memilih kondisi ketiga
+    dialogueSentece: Salah route
     charOrder: 0
-  - elementName: Pilih Kondisi
-    charName: 
-    dialogueSentece: Pilih kondisi
-    charOrder: 4
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  autoFillPortraitData: []
   isHasChoice: 1
   choiceList:
-  - {fileID: 11400000, guid: 544177a31bb448f478d72dcd75d2147f, type: 2}
-  - {fileID: 11400000, guid: 55b0128e4b0bfb24ba9c41b37aac74cd, type: 2}
-  - {fileID: 11400000, guid: 2d72d4c04c6e41c4ba6b77db94c462ed, type: 2}
-  - {fileID: 11400000, guid: 9c0ba040de3570c4ca2438ed5a89e31c, type: 2}
+  - {fileID: 11400000, guid: cecf781556cc0e942a6711534d40f5c6, type: 2}
+  - {fileID: 11400000, guid: 51dbd200b1a15294991307d2c4f43d01, type: 2}
+  - {fileID: 11400000, guid: 012bd9777038d0f46b9925d2a1191a65, type: 2}
+  background: {fileID: 0}
+  isUseTransition: 0
+  updateSomething: 0

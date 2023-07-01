@@ -10,12 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fe0a2619e8b06848bef50b53fb6b40e, type: 3}
-  m_Name: Tasbih
+  m_Name: Shadaqallahul Adzim
   m_EditorClassIdentifier: 
   dialogueData:
-  - elementName: Kondisi
-    charName: Kamu
-    dialogueSentece: "Sub\u1E25\u0101nall\u0101h"
+  - elementName: Selesai
+    charName: Selesai
+    dialogueSentece: Shadaqallahul Adzim
     charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  autoFillPortraitData: []
   isHasChoice: 0
   choiceList: []
+  background: {fileID: 0}
+  isUseTransition: 1
+  updateSomething: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new dialogue", menuName = "Dialogue System by Wichdan/Create Dialogue", order = 0)]
 public class Dialogue : ScriptableObject
 {
+    [Header("Conversation")]
     public List<Conversation> dialogueData;
     public List<AutoFillPortraitData> autoFillPortraitData;
 
@@ -15,11 +16,18 @@ public class Dialogue : ScriptableObject
         public GameObject portraitData;
     }
 
+    [Header("Choice")]
     public bool isHasChoice;
     public List<Dialogue> choiceList;
 
+    [Header("Other")]
+    public Sprite background;
+    public bool isUseTransition;
+    public bool updateSomething;
+
     private void OnEnable()
     {
+        if(dialogueData == null) return;
         for (int i = 0; i < dialogueData.Capacity; i++)
         {
             for (int j = 0; j < autoFillPortraitData.Capacity; j++)

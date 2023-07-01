@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe0a2619e8b06848bef50b53fb6b40e, type: 3}
+  m_Name: Surat Al-Ikhlas
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - elementName: Ta awudz
+    charName: Ta awudz
+    dialogueSentece: A'udzu billahi minas-syaitanir-rajim(i)
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Basmallah
+    charName: Basmallah
+    dialogueSentece: "Bismill\u0101hir-ra\u1E25m\u0101nir-ra\u1E25\u012Bm(i)"
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Ayat 1
+    charName: Ayat 1
+    dialogueSentece: "Qul huwall\u0101hu a\u1E25ad(un)."
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Ayat 2
+    charName: Ayat 2
+    dialogueSentece: "All\u0101hu\u1E63-\u1E63amad(u)."
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Ayat 3
+    charName: Ayat 3
+    dialogueSentece: "Lam yalid wa lam y\u016Blad."
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Ayat 4
+    charName: Ayat 4
+    dialogueSentece: "Wa lam yakul lah\u016B kufuwan a\u1E25ad(un)."
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  autoFillPortraitData: []
+  isHasChoice: 1
+  choiceList:
+  - {fileID: 11400000, guid: ea9fd7934fec9c041ad69282f3415e19, type: 2}
+  - {fileID: 11400000, guid: 4f2cbd8783935624da19c117d381c2fb, type: 2}
+  - {fileID: 11400000, guid: 6f4ba72a0d782424d998e15d7858a523, type: 2}
+  background: {fileID: 0}
+  isUseTransition: 1
+  updateSomething: 0

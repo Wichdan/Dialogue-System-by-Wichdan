@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe0a2619e8b06848bef50b53fb6b40e, type: 3}
+  m_Name: Al-Fatihah
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - elementName: Ta awudz
+    charName: Ta awudz
+    dialogueSentece: A'udzu billahi minas-syaitanir-rajim(i)
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Ayat 1
+    charName: Ayat 1
+    dialogueSentece: "Bismill\u0101hir-ra\u1E25m\u0101nir-ra\u1E25\u012Bm(i)."
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Ayat 2
+    charName: Ayat 2
+    dialogueSentece: "Al-\u1E25amdu lill\u0101hi rabbil-\u2018\u0101lam\u012Bn(a)."
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Ayat 3
+    charName: Ayat 3
+    dialogueSentece: "Ar-ra\u1E25m\u0101nir-ra\u1E25\u012Bm(i)."
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Ayat 4
+    charName: Ayat 4
+    dialogueSentece: "M\u0101liki yaumid-d\u012Bn(i)."
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Ayat 5
+    charName: Ayat 5
+    dialogueSentece: "Iyy\u0101ka na\u2018budu wa iyy\u0101ka nasta\u2018\u012Bn(u),"
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Ayat 6
+    charName: Ayat 6
+    dialogueSentece: "Ihdina\u1E63-\u1E63ir\u0101\u1E6Dal-mustaq\u012Bm(a)."
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Ayat 7
+    charName: Ayat 7
+    dialogueSentece: "\u1E62ir\u0101\u1E6Dal-la\u017C\u012Bna an\u2018amta \u2018alaihim,
+      gairil-mag\u1E0D\u016Bbi \u2018alaihim wa la\u1E0D-\u1E0D\u0101ll\u012Bn(a)."
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Amin
+    charName: Amin
+    dialogueSentece: Amin
+    charOrder: 0
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  autoFillPortraitData: []
+  isHasChoice: 1
+  choiceList:
+  - {fileID: 11400000, guid: e2d85eaeadb72a641aa97cd6f24e336f, type: 2}
+  - {fileID: 11400000, guid: ea9fd7934fec9c041ad69282f3415e19, type: 2}
+  - {fileID: 11400000, guid: 4f2cbd8783935624da19c117d381c2fb, type: 2}
+  background: {fileID: 0}
+  isUseTransition: 1
+  updateSomething: 0

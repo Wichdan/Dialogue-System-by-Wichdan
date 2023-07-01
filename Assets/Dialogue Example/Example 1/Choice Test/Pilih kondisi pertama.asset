@@ -15,7 +15,17 @@ MonoBehaviour:
   dialogueData:
   - elementName: Kondisi
     charName: Kamu
-    dialogueSentece: Saya memilih kondisi pertama
+    dialogueSentece: Salah route
     charOrder: 0
-  isHasChoice: 0
-  choiceList: []
+    portraitData: {fileID: 0}
+    eyesValue: 0
+    mouthValue: 0
+  autoFillPortraitData: []
+  isHasChoice: 1
+  choiceList:
+  - {fileID: 11400000, guid: 51dbd200b1a15294991307d2c4f43d01, type: 2}
+  - {fileID: 11400000, guid: 012bd9777038d0f46b9925d2a1191a65, type: 2}
+  - {fileID: 11400000, guid: 87335e6dc5358a14abe5d5651e32f6f3, type: 2}
+  background: {fileID: 0}
+  isUseTransition: 0
+  updateSomething: 0

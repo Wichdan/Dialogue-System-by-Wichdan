@@ -24,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Other Reference")]
     [SerializeField] GameObject doneImg;
     [SerializeField] GameObject dialoguePanel, sentencePanel;
+    [SerializeField] Image backgroundPanel;
 
     [Header("Auto Next")]
     [SerializeField] bool isAuto;
@@ -39,9 +40,15 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject choicePanel;
     [SerializeField] List<GameObject> choiceBtn;
 
+    [Header("Animation")]
+    [SerializeField] Animator startTransition;
+    [SerializeField] float startDelay = 1f;
+    [SerializeField] Animator screenEffect;
+
     [Header("Other Setting")]
-    [SerializeField] bool isHide;
     [SerializeField] bool isPlayOnStart;
+    [SerializeField] bool updateSomething;
+    bool isHide;
 
     int dialogueIndex;
 
@@ -51,6 +58,7 @@ public class DialogueManager : MonoBehaviour
     {
         textSpeed = 0.05f;
         txtSpdChanger = 0;
+        startDelay = 1f;
     }
 
     private void Awake()
@@ -68,8 +76,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         ChangeTextSpeed();
-        if(isPlayOnStart)
-            StartDialogue();
+        //StartDialogue();
     }
 
     private void OnEnable()
@@ -81,20 +88,29 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            NextDialogue();
+            NextConversation();
         }
     }
 
     public void SetDialogueRef(Dialogue reference) => dialogueRef = reference;
 
-    //Digunakan untuk memulai dialog
-    void StartDialogue()
+    //dialog dimulai
+    public void StartDialogue()
+    {
+        dialogueIndex = 0;
+        updateSomething = false;
+        SetTransition(startTransition, true);
+        StartCoroutine(StartDelay());
+    }
+
+    //Digunakan untuk memulai pembicaraan
+    void StartConversation()
     {
         StopAllCoroutines();
 
         if (dialogueIndex >= dialogueRef.dialogueData.Capacity)
         {
-            EndDialogue();
+            EndConversation();
             return;
         }
 
@@ -108,6 +124,8 @@ public class DialogueManager : MonoBehaviour
 
         if (!dialogueRef.isHasChoice)
             choicePanel.SetActive(false);
+
+        SetBackground();
 
         StartCoroutine(TextAnimation());
     }
@@ -179,33 +197,34 @@ public class DialogueManager : MonoBehaviour
     }
 
     //mengecek jika data sudah sampe akhir maka dialog selesai
-    void EndDialogue()
+    void EndConversation()
     {
         Debug.Log("End Dialogue!");
-
+        SetTransition(startTransition, false);
+        CheckUpdateSomething();
         if (dialogueRef.isHasChoice)
-        {
             SetChoice();
-        }
-        else
+        else{
             dialoguePanel.SetActive(false);
+            
+        }
     }
 
     //Digunakan untuk melanjutkan dialog
-    void NextDialogue()
+    void NextConversation()
     {
         //cek agar dialogueIndex tdk ketambah
         if (dialogueIndex >= dialogueRef.dialogueData.Capacity) return;
         dialogueIndex++;
         //mulai dialog
-        StartDialogue();
+        StartConversation();
     }
 
     //skip dialog
     public void SkipDialogue()
     {
         dialogueIndex = dialogueRef.dialogueData.Capacity - 1;
-        StartDialogue();
+        StartConversation();
     }
 
     //tampil / sembunyikan dialog
@@ -213,12 +232,20 @@ public class DialogueManager : MonoBehaviour
     {
         isHide = !isHide;
         sentencePanel.SetActive(!isHide);
+
+        isAuto = false;
+        CheckAutoNextBtn();
     }
 
     //button autonext
     public void AutoNextBtn()
     {
         isAuto = !isAuto;
+        CheckAutoNextBtn();
+    }
+
+    void CheckAutoNextBtn()
+    {
         if (isAuto)
             txtAuto.text = "Stop";
         else
@@ -229,7 +256,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator AutoNextDialogue()
     {
         yield return new WaitForSeconds(timeToNext);
-        NextDialogue();
+        NextConversation();
     }
 
     //mengganti textspeed
@@ -239,29 +266,24 @@ public class DialogueManager : MonoBehaviour
         txtSpdChanger++;
 
         if (txtSpdChanger == 0)
-        {
-            textSpeed = 0.1f;
-            txtSpeed.text = "Slow";
-        }
+            SetTextSpeed(0.1f, "Slow");
         else if (txtSpdChanger == 1)
-        {
-            textSpeed = 0.05f;
-            txtSpeed.text = "Normal";
-        }
+            SetTextSpeed(0.05f, "Normal");
         else if (txtSpdChanger == 2)
-        {
-            textSpeed = 0.01f;
-            txtSpeed.text = "Fast";
-        }
+            SetTextSpeed(0.01f, "Fast");
+    }
+
+    void SetTextSpeed(float _textSpeed, string message)
+    {
+        textSpeed = _textSpeed;
+        txtSpeed.text = message;
     }
 
     //matikan semua button pilihan
     void ResetChoiceBtn()
     {
         for (int i = 0; i < choiceBtn.Capacity; i++)
-        {
             choiceBtn[i].SetActive(false);
-        }
     }
 
     //Be sure to disable all the choice Btn first!
@@ -283,8 +305,30 @@ public class DialogueManager : MonoBehaviour
         dialogueIndex = 0;
         ResetChoiceBtn();
         choicePanel.SetActive(false);
-        StartDialogue();
+        StartConversation();
     }
+
+    void SetBackground()
+    {
+        if(dialogueRef.background == null) return;
+        backgroundPanel.sprite = dialogueRef.background;
+    }
+
+    void SetTransition(Animator anim, bool condition)
+    {
+        if (!dialogueRef.isUseTransition) return;
+        anim.SetBool("start", condition);
+    }
+
+    IEnumerator StartDelay()
+    {
+        yield return new WaitForSeconds(startDelay);
+        StartConversation();
+    }
+
+    public bool GetUpdateSomething() => updateSomething;
+
+    void CheckUpdateSomething() => updateSomething = dialogueRef.updateSomething;
 
     IEnumerator TextAnimation()
     {

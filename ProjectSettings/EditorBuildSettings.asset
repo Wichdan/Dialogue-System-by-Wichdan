@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Dialogue Sample.unity
-    guid: 45e66c52ea3cf3541b94704a5644c668
+    path: Assets/Scenes/Visual Novel.unity
+    guid: e8464545d3a479649844095018537a87
   m_configObjects: {}

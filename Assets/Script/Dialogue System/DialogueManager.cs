@@ -25,6 +25,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject doneImg;
     [SerializeField] GameObject dialoguePanel, sentencePanel;
     [SerializeField] Image backgroundPanel;
+    [SerializeField] Button nextButton;
 
     [Header("Auto Next")]
     [SerializeField] bool isAuto;
@@ -77,6 +78,9 @@ public class DialogueManager : MonoBehaviour
     {
         ChangeTextSpeed();
         //StartDialogue();
+        nextButton.onClick.AddListener(()=>{
+            NextConversation();
+        });
     }
 
     private void OnEnable()
@@ -97,6 +101,7 @@ public class DialogueManager : MonoBehaviour
     //dialog dimulai
     public void StartDialogue()
     {
+        if(dialogueRef == null) return;
         dialogueIndex = 0;
         updateSomething = false;
         SetTransition(startTransition, true);
@@ -213,6 +218,7 @@ public class DialogueManager : MonoBehaviour
     //Digunakan untuk melanjutkan dialog
     void NextConversation()
     {
+        if(dialogueRef == null) return;
         //cek agar dialogueIndex tdk ketambah
         if (dialogueIndex >= dialogueRef.dialogueData.Capacity) return;
         dialogueIndex++;

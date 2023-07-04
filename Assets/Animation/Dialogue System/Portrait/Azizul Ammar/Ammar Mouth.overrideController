@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ammar Mouth
+  m_Controller: {fileID: 9100000, guid: f015bfb2b4d9b57429890f36f20f6fd7, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 8c24f24bee495c84e8609b99d1137d59, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 03323663e3d57dc419364805a5ab27a5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 17bd0a298765f39498ed679b4326feb3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2d196978bf9c2534cba8d96e30c47940, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 722c840100938c24d940bade21a56f9e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b81f0dc9fa6ba4e448056510cf53ff89, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cafc283d5af5d8244a0f3a455b994ad8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 48a295d92cfd7534cbd6938de2752867, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ae84d435a25ecea4b91dfadafa776400, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: abfdc9eedab834c4198cdb7d0ab90775, type: 2}

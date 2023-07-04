@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        StartDialogue();
+        //StartDialogue();
     }
 
     private void Update()
@@ -22,9 +23,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue()
     {
         DialogueManager.singleton.SetDialogueRef(dialogues[index]);
         DialogueManager.singleton.StartDialogue();
+    }
+
+    public void ResetScene()
+    {
+        int curScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(curScene);
     }
 }

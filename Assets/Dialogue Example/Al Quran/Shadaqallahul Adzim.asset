@@ -25,4 +25,4 @@ MonoBehaviour:
   choiceList: []
   background: {fileID: 0}
   isUseTransition: 1
-  updateSomething: 0
+  updateSomething: 1

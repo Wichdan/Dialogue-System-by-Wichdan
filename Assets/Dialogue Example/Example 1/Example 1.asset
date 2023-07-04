@@ -23,44 +23,54 @@ MonoBehaviour:
     mouthValue: 0
   - elementName: NPC
     charName: '?'
-    dialogueSentece: Waalaikumsalam, salam kenal namaku Rahima Aqila. Panggil saja
-      saya Aqila
+    dialogueSentece: Waalaikumsalam, salam kenal namaku Azizul Ammar. Bisa dipanggil
+      Ammar
     charOrder: 2
-    portraitData: {fileID: 0}
+    portraitData: {fileID: 998530573909269453, guid: 8d1656332ab0a3e42bf180e097296e02, type: 3}
     eyesValue: 0
     mouthValue: 0
   - elementName: Player
     charName: Rahman
-    dialogueSentece: Mbak Aqila, sekolah dimana? kalau saya, kuliah semester 1 di
+    dialogueSentece: Mas Ammar, sekolah dimana? kalau saya, kuliah semester 1 di
       Universitas Kudus
     charOrder: 0
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
     eyesValue: 0
     mouthValue: 0
   - elementName: NPC
-    charName: Aqila
-    dialogueSentece: Aqila sekolah di SMK Persatuan Kudus, dan sekarang kelas 12
+    charName: Ammar
+    dialogueSentece: Saya sekolah di Universitas Semarang, dan sekarang semester
+      3
     charOrder: 2
-    portraitData: {fileID: 0}
+    portraitData: {fileID: 998530573909269453, guid: 8d1656332ab0a3e42bf180e097296e02, type: 3}
     eyesValue: 0
     mouthValue: 0
   - elementName: Player
     charName: Rahman
-    dialogueSentece: Ini dialog sistem
-    charOrder: 1
+    dialogueSentece: Ohh... gitu, masuk jurusan apa? Kalau saya ikut jurusan Animasi
+    charOrder: 0
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
     eyesValue: 0
     mouthValue: 0
-  - elementName: Choice
-    charName: System
-    dialogueSentece: Pilih kondisi
-    charOrder: 3
+  - elementName: NPC
+    charName: Ammar
+    dialogueSentece: Kalau saya masuk jurusan pembuatan game
+    charOrder: 2
+    portraitData: {fileID: 998530573909269453, guid: 8d1656332ab0a3e42bf180e097296e02, type: 3}
+    eyesValue: 0
+    mouthValue: 0
+  - elementName: Pilihan
+    charName: Rahman
+    dialogueSentece: Enaknya mau ngomong apa lagi ya...?
+    charOrder: 1
     portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
   autoFillPortraitData:
   - charName: Rahman
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
+  - charName: Ammar
+    portraitData: {fileID: 998530573909269453, guid: 8d1656332ab0a3e42bf180e097296e02, type: 3}
   isHasChoice: 1
   choiceList:
   - {fileID: 11400000, guid: cecf781556cc0e942a6711534d40f5c6, type: 2}

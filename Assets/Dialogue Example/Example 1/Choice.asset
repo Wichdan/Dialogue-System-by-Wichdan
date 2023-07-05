@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe0a2619e8b06848bef50b53fb6b40e, type: 3}
+  m_Name: Choice
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - elementName: Pilihan
+    charName: Rahman
+    dialogueSentece: Enaknya mau ngomong apa lagi ya...?
+    charOrder: 1
+    portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
+    eyesValue: 0
+    mouthValue: 0
+  autoFillPortraitData: []
+  isHasChoice: 1
+  choiceList:
+  - {fileID: 11400000, guid: cecf781556cc0e942a6711534d40f5c6, type: 2}
+  - {fileID: 11400000, guid: 51dbd200b1a15294991307d2c4f43d01, type: 2}
+  - {fileID: 11400000, guid: 012bd9777038d0f46b9925d2a1191a65, type: 2}
+  - {fileID: 11400000, guid: 87335e6dc5358a14abe5d5651e32f6f3, type: 2}
+  background: {fileID: 0}
+  isUseTransition: 0
+  updateSomething: 0

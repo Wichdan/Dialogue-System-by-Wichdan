@@ -8,4 +8,5 @@ public class PortraitData : MonoBehaviour
     public Sprite portrait;
     public RuntimeAnimatorController eyesCharCtrller;
     public RuntimeAnimatorController mouthCharCtrller;
+    public AudioClip talkSfx;
 }

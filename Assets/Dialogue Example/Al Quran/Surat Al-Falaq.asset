@@ -66,6 +66,7 @@ MonoBehaviour:
   isHasChoice: 1
   choiceList:
   - {fileID: 11400000, guid: e2d85eaeadb72a641aa97cd6f24e336f, type: 2}
+  - {fileID: 11400000}
   - {fileID: 11400000, guid: 4f2cbd8783935624da19c117d381c2fb, type: 2}
   - {fileID: 11400000, guid: 6f4ba72a0d782424d998e15d7858a523, type: 2}
   background: {fileID: 0}

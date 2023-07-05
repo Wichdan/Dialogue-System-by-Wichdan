@@ -23,7 +23,7 @@ MonoBehaviour:
     mouthValue: 0
   - elementName: NPC
     charName: '?'
-    dialogueSentece: Waalaikumsalam, salam kenal namaku Ammar
+    dialogueSentece: Waalaikumsalam, salam kenal namaku Adi
     charOrder: 2
     portraitData: {fileID: 0}
     eyesValue: 0

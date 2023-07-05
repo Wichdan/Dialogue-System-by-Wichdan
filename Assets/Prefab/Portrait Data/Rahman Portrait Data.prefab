@@ -47,3 +47,4 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: b9b4ab797426c3d4ba2550310f535c14, type: 3}
   eyesCharCtrller: {fileID: 9100000, guid: 642a0e8a8c8e1de4bae23d5c9cad87e8, type: 2}
   mouthCharCtrller: {fileID: 9100000, guid: f015bfb2b4d9b57429890f36f20f6fd7, type: 2}
+  talkSfx: {fileID: 0}

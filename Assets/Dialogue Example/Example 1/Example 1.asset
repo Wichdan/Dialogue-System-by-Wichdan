@@ -19,16 +19,16 @@ MonoBehaviour:
       Bisa dipanggil Rahman
     charOrder: 0
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
-    eyesValue: 0
-    mouthValue: 0
+    eyesValue: 0.1
+    mouthValue: 0.3
   - elementName: NPC
     charName: '?'
     dialogueSentece: Waalaikumsalam, salam kenal namaku Azizul Ammar. Bisa dipanggil
       Ammar
     charOrder: 2
     portraitData: {fileID: 998530573909269453, guid: 8d1656332ab0a3e42bf180e097296e02, type: 3}
-    eyesValue: 0
-    mouthValue: 0
+    eyesValue: 0.2
+    mouthValue: 0.2
   - elementName: Player
     charName: Rahman
     dialogueSentece: Mas Ammar, sekolah dimana? kalau saya, kuliah semester 1 di
@@ -59,24 +59,13 @@ MonoBehaviour:
     portraitData: {fileID: 998530573909269453, guid: 8d1656332ab0a3e42bf180e097296e02, type: 3}
     eyesValue: 0
     mouthValue: 0
-  - elementName: Pilihan
-    charName: Rahman
-    dialogueSentece: Enaknya mau ngomong apa lagi ya...?
-    charOrder: 1
-    portraitData: {fileID: 0}
-    eyesValue: 0
-    mouthValue: 0
   autoFillPortraitData:
   - charName: Rahman
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
   - charName: Ammar
     portraitData: {fileID: 998530573909269453, guid: 8d1656332ab0a3e42bf180e097296e02, type: 3}
-  isHasChoice: 1
-  choiceList:
-  - {fileID: 11400000, guid: cecf781556cc0e942a6711534d40f5c6, type: 2}
-  - {fileID: 11400000, guid: 51dbd200b1a15294991307d2c4f43d01, type: 2}
-  - {fileID: 11400000, guid: 012bd9777038d0f46b9925d2a1191a65, type: 2}
-  - {fileID: 11400000, guid: 87335e6dc5358a14abe5d5651e32f6f3, type: 2}
+  isHasChoice: 0
+  choiceList: []
   background: {fileID: 21300000, guid: ae4687486b322f549a3b8207d5a91e03, type: 3}
   isUseTransition: 1
-  updateSomething: 0
+  updateSomething: 1

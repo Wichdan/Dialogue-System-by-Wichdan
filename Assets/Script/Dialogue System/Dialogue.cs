@@ -52,8 +52,13 @@ public class Conversation
     [Header("Portrait Order")]
     public CharacterOrder charOrder;
     public GameObject portraitData;
+
+    [Header("Animation")]
     [Range(0, 1)]
-    public float eyesValue, mouthValue;
+    public float eyesValue;
+    [Range(0,1)]
+    public float mouthValue;
+
     public enum CharacterOrder
     {
         Right, Mid, Left, None

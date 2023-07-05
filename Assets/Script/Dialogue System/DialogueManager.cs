@@ -13,13 +13,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI sentenceTxt;
     [SerializeField] private TMP_Text m_textMeshPro;
 
-    [Header("Name Panel")]
-    [SerializeField] TextMeshProUGUI[] charNameTxt;
-    [SerializeField] GameObject[] charNamePanel;
-
-    [Header("Portrait")]
-    [SerializeField] GameObject[] portrait;
-    [SerializeField] Animator[] eyesAnim, mouthAnim;
+    [Header("Speaker")]
+    [SerializeField] List<Speaker> speakers;
 
     [Header("Other Reference")]
     [SerializeField] GameObject doneImg;
@@ -46,12 +41,28 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] float startDelay = 1f;
     [SerializeField] Animator screenEffect;
 
+    [Header("Sound")]
+    public AudioSource audioSource;
+
     [Header("Other Setting")]
     [SerializeField] bool isPlayOnStart;
     [SerializeField] bool updateSomething;
-    bool isHide;
 
+    [System.Serializable]
+    public struct Speaker
+    {
+        public string speakerOrder;
+        public GameObject charNamePanel;
+        public TextMeshProUGUI charNameTxt;
+        public Image portrait;
+        public GameObject mask;
+        public Animator eyesAnim, mouthAnim;
+    }
+
+    bool isHide;
     int dialogueIndex;
+    bool isPrint, isCanNext;
+
 
     public static DialogueManager singleton;
 
@@ -76,24 +87,24 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         ChangeTextSpeed();
         //StartDialogue();
-        nextButton.onClick.AddListener(()=>{
-            NextConversation();
+        nextButton.onClick.AddListener(() =>
+        {
+            SwapPrint();
         });
-    }
-
-    private void OnEnable()
-    {
-        ResetChoiceBtn();
     }
 
     private void Update()
     {
+        if (dialogueRef == null) return;
         if (Input.GetKeyDown(KeyCode.Space))
-        {
+            SwapPrint();
+
+        if (isCanNext && !isPrint)
             NextConversation();
-        }
+        
     }
 
     public void SetDialogueRef(Dialogue reference) => dialogueRef = reference;
@@ -101,7 +112,8 @@ public class DialogueManager : MonoBehaviour
     //dialog dimulai
     public void StartDialogue()
     {
-        if(dialogueRef == null) return;
+        if (dialogueRef == null) return;
+        ResetSpeaker();
         dialogueIndex = 0;
         updateSomething = false;
         SetTransition(startTransition, true);
@@ -111,6 +123,8 @@ public class DialogueManager : MonoBehaviour
     //Digunakan untuk memulai pembicaraan
     void StartConversation()
     {
+        isPrint = false;
+        isCanNext = false;
         StopAllCoroutines();
 
         if (dialogueIndex >= dialogueRef.dialogueData.Capacity)
@@ -131,6 +145,7 @@ public class DialogueManager : MonoBehaviour
             choicePanel.SetActive(false);
 
         SetBackground();
+        SetTalkSfx();
 
         StartCoroutine(TextAnimation());
     }
@@ -140,64 +155,77 @@ public class DialogueManager : MonoBehaviour
     {
         int charOrder = (int)dialogueRef.dialogueData[dialogueIndex].charOrder;
         //isi dan hidupkan nama panel
-        for (int i = 0; i < charNamePanel.Length; i++)
+        for (int i = 0; i < speakers.Capacity; i++)
         {
-            charNameTxt[i] = charNamePanel[i].GetComponentInChildren<TextMeshProUGUI>();
             //menghidupkan / mematikan CharOrder nama sesuai dengan ordernya
             if (charOrder != i)
             {
-                charNamePanel[i].SetActive(false);
-                portrait[i].SetActive(false);
+                SetName(i, false);
             }
             else
             {
-                charNamePanel[i].SetActive(true);
-                charNameTxt[i].text = dialogueRef.dialogueData[dialogueIndex].charName;
-                portrait[i].SetActive(true);
-                SetPortrait(i);
-                SetEyesAnimation(i);
-                SetMouthAnimation(i);
+                SetName(i, true);
+                if (dialogueRef.dialogueData[dialogueIndex].portraitData != null)
+                {
+                    SetPortrait(i);
+                    SetEyesAnimation(i);
+                    SetMouthAnimation(i);
+                }
             }
         }
+    }
+
+    void SetName(int index, bool condition)
+    {
+        speakers[index].charNamePanel.SetActive(condition);
+        speakers[index].charNameTxt.text = dialogueRef.dialogueData[dialogueIndex].charName;
+        speakers[index].mask.SetActive(!condition);
     }
 
     void SetPortrait(int index)
     {
-        Image portraitImg = portrait[index].GetComponent<Image>();
-
-        if (dialogueRef.dialogueData[dialogueIndex].portraitData != null)
-        {
-            portraitImg.sprite =
-            dialogueRef.dialogueData[dialogueIndex].portraitData.GetComponent<PortraitData>().portrait;
-        }
-        else
-            portrait[index].SetActive(false);
+        speakers[index].portrait.sprite =
+        dialogueRef.dialogueData[dialogueIndex].portraitData.GetComponent<PortraitData>().portrait;
+        if (speakers[index].portrait.sprite != null)
+            speakers[index].portrait.gameObject.SetActive(true);
+        else if (speakers[index].portrait.sprite == null)
+            speakers[index].portrait.gameObject.SetActive(false);
     }
 
     void SetEyesAnimation(int index)
     {
-        if (dialogueRef.dialogueData[dialogueIndex].portraitData == null) return;
-        eyesAnim[index].runtimeAnimatorController =
+        speakers[index].eyesAnim.runtimeAnimatorController =
         dialogueRef.dialogueData[dialogueIndex].portraitData.GetComponent<PortraitData>().eyesCharCtrller;
-        eyesAnim[index].SetFloat("eyesValue", dialogueRef.dialogueData[dialogueIndex].eyesValue);
+
+        if (speakers[index].eyesAnim.runtimeAnimatorController == null)
+            speakers[index].eyesAnim.gameObject.SetActive(false);
+        else
+            speakers[index].eyesAnim.gameObject.SetActive(true);
+
+        speakers[index].eyesAnim.SetFloat("eyesValue", dialogueRef.dialogueData[dialogueIndex].eyesValue);
     }
 
     void SetMouthAnimation(int index)
     {
-        if (dialogueRef.dialogueData[dialogueIndex].portraitData == null) return;
-        mouthAnim[index].runtimeAnimatorController =
+        speakers[index].mouthAnim.runtimeAnimatorController =
         dialogueRef.dialogueData[dialogueIndex].portraitData.GetComponent<PortraitData>().mouthCharCtrller;
-        mouthAnim[index].SetFloat("mouthValue", dialogueRef.dialogueData[dialogueIndex].mouthValue);
+
+        if (speakers[index].mouthAnim.runtimeAnimatorController == null)
+            speakers[index].mouthAnim.gameObject.SetActive(false);
+        else
+            speakers[index].mouthAnim.gameObject.SetActive(true);
+
+        speakers[index].mouthAnim.SetFloat("mouthValue", dialogueRef.dialogueData[dialogueIndex].mouthValue);
     }
 
     void SetTalkingAnimation(bool isTalk)
     {
         if (dialogueRef.dialogueData[dialogueIndex].portraitData == null) return;
         int charOrder = (int)dialogueRef.dialogueData[dialogueIndex].charOrder;
-        for (int i = 0; i < charNamePanel.Length; i++)
+        for (int i = 0; i < speakers.Capacity; i++)
         {
             if (charOrder == i)
-                mouthAnim[i].SetBool("isTalk", isTalk);
+                speakers[i].mouthAnim.SetBool("isTalk", isTalk);
         }
     }
 
@@ -209,16 +237,15 @@ public class DialogueManager : MonoBehaviour
         CheckUpdateSomething();
         if (dialogueRef.isHasChoice)
             SetChoice();
-        else{
+        else
             dialoguePanel.SetActive(false);
-            
-        }
+
     }
 
     //Digunakan untuk melanjutkan dialog
     void NextConversation()
     {
-        if(dialogueRef == null) return;
+        if (dialogueRef == null) return;
         //cek agar dialogueIndex tdk ketambah
         if (dialogueIndex >= dialogueRef.dialogueData.Capacity) return;
         dialogueIndex++;
@@ -316,7 +343,7 @@ public class DialogueManager : MonoBehaviour
 
     void SetBackground()
     {
-        if(dialogueRef.background == null) return;
+        if (dialogueRef.background == null) return;
         backgroundPanel.sprite = dialogueRef.background;
     }
 
@@ -332,8 +359,27 @@ public class DialogueManager : MonoBehaviour
         StartConversation();
     }
 
-    public bool GetUpdateSomething() => updateSomething;
+    void SetTalkSfx()
+    {
+        if (dialogueRef.dialogueData[dialogueIndex].portraitData == null) return;
+        audioSource.clip =
+        dialogueRef.dialogueData[dialogueIndex].portraitData.GetComponent<PortraitData>().talkSfx;
+    }
 
+    void ResetSpeaker()
+    {
+        for (int i = 0; i < speakers.Capacity; i++)
+        {
+            speakers[i].portrait.gameObject.SetActive(false);
+            speakers[i].portrait.sprite = null;
+            speakers[i].eyesAnim.runtimeAnimatorController = null;
+            speakers[i].mouthAnim.runtimeAnimatorController = null;
+        }
+    }
+
+    void SwapPrint() => isPrint = !isPrint;
+    void SwapNext() => isCanNext = !isCanNext;
+    public bool GetUpdateSomething() => updateSomething;
     void CheckUpdateSomething() => updateSomething = dialogueRef.updateSomething;
 
     IEnumerator TextAnimation()
@@ -346,6 +392,7 @@ public class DialogueManager : MonoBehaviour
         bool isDone = false;
         doneImg.SetActive(isDone);
         SetTalkingAnimation(!isDone);
+        audioSource.Play();
 
         while (!isDone)
         {
@@ -353,21 +400,33 @@ public class DialogueManager : MonoBehaviour
 
             m_textMeshPro.maxVisibleCharacters = visibleCount;
 
-            if (visibleCount >= totalVisibleCharacters)
+            if (visibleCount >= totalVisibleCharacters && !isPrint)
             {
-
-                if (isAuto)
-                    StartCoroutine(AutoNextDialogue());
-
                 isDone = true;
-                doneImg.SetActive(isDone);
-                SetTalkingAnimation(!isDone);
+                isPrint = true;
+                DoneTalking(isDone);
                 yield return new WaitForSeconds(1.0f);
             }
-
+            else if (isPrint && visibleCount <= totalVisibleCharacters)
+            {
+                isDone = true;
+                visibleCount = totalVisibleCharacters;
+                m_textMeshPro.maxVisibleCharacters = visibleCount;
+                DoneTalking(isDone);
+            }
             counter += 1;
-
             yield return new WaitForSeconds(textSpeed);
         }
+    }
+
+    void DoneTalking(bool isDone)
+    {
+        isCanNext = true;
+        if (isAuto)
+            StartCoroutine(AutoNextDialogue());
+
+        audioSource.Stop();
+        doneImg.SetActive(isDone);
+        SetTalkingAnimation(!isDone);
     }
 }

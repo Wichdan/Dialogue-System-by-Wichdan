@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Left Gesture Portrait
+  m_Controller: {fileID: 9100000, guid: ecc679ab3144fe6409f14322a70e9b46, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 8463adc1dc15a8c4eafde1205ce04e32, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 86d2526e75c242041add7238bb1e9839, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d7f069ac3f88bf446941ce945e088cce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0ccdb0ef1632e5147bed3142ca727b33, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 88c95d67172df9640ae0ce572e800951, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 86ad8f50c8e216d4cb2b87c1aa12af10, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bf2b297ab5e01ad42986b982a832f30d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4e453e96f2ed49a41a92ed4b9e61290c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f1f558dcd86f5ac4298c531140f01694, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 064ec9eac7edab94cac1537f1b612b4d, type: 2}

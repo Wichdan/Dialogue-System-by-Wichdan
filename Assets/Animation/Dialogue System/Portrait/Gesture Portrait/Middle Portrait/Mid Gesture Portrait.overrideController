@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mid Gesture Portrait
+  m_Controller: {fileID: 9100000, guid: ecc679ab3144fe6409f14322a70e9b46, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 8463adc1dc15a8c4eafde1205ce04e32, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8c3c024bb0022354eb60f2340f86122a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d7f069ac3f88bf446941ce945e088cce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8e18f82c0c89f814aa3e1b4c5491ad45, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 88c95d67172df9640ae0ce572e800951, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b8c24bfcea5d5e54fb5df5cc63eacc79, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bf2b297ab5e01ad42986b982a832f30d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 93f7b57bc50ea084d88f72533c7d087f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f1f558dcd86f5ac4298c531140f01694, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2153120c03062c448ad0d1f45c0328ae, type: 2}

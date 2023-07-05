@@ -52,11 +52,17 @@ public class DialogueManager : MonoBehaviour
     public struct Speaker
     {
         public string speakerOrder;
+        [Header("Name Panel")]
         public GameObject charNamePanel;
         public TextMeshProUGUI charNameTxt;
+
+        [Header("Portrait")]
         public Image portrait;
         public GameObject mask;
-        public Animator eyesAnim, mouthAnim;
+
+        [Header("Animation")]
+        public Animator eyesAnim;
+        public Animator mouthAnim, gestureAnim;
     }
 
     bool isHide;
@@ -170,6 +176,7 @@ public class DialogueManager : MonoBehaviour
                     SetPortrait(i);
                     SetEyesAnimation(i);
                     SetMouthAnimation(i);
+                    SetGestureAnimation(i);
                 }
             }
         }
@@ -227,6 +234,11 @@ public class DialogueManager : MonoBehaviour
             if (charOrder == i)
                 speakers[i].mouthAnim.SetBool("isTalk", isTalk);
         }
+    }
+
+    void SetGestureAnimation(int index)
+    {
+        speakers[index].gestureAnim.SetFloat("gestureValue", dialogueRef.dialogueData[dialogueIndex].gestureValue);
     }
 
     //mengecek jika data sudah sampe akhir maka dialog selesai
@@ -344,8 +356,13 @@ public class DialogueManager : MonoBehaviour
 
     void SetBackground()
     {
-        if (dialogueRef.background == null) return;
-        backgroundPanel.sprite = dialogueRef.background;
+        if (dialogueRef.background == null){
+            backgroundPanel.enabled = false;
+            return;
+        }else{
+            backgroundPanel.enabled = true;
+            backgroundPanel.sprite = dialogueRef.background;
+        }
     }
 
     void SetTransition(Animator anim, bool condition)
@@ -380,7 +397,7 @@ public class DialogueManager : MonoBehaviour
 
     void SwapPrint()
     {
-        if(isHide) return;
+        if (isHide) return;
         isPrint = !isPrint;
     }
     public bool GetUpdateSomething() => updateSomething;

@@ -53,11 +53,15 @@ public class Conversation
     public CharacterOrder charOrder;
     public GameObject portraitData;
 
-    [Header("Animation")]
+    [Header("Face Animation")]
     [Range(0, 1)]
     public float eyesValue;
     [Range(0,1)]
     public float mouthValue;
+
+    [Header("Gesture Animation")]
+    [Range(0,1)]
+    public float gestureValue;
 
     public enum CharacterOrder
     {

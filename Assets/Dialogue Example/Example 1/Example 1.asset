@@ -21,6 +21,7 @@ MonoBehaviour:
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
     eyesValue: 0
     mouthValue: 0
+    gestureValue: 0.1
   - elementName: NPC
     charName: '?'
     dialogueSentece: Waalaikumsalam, salam kenal namaku Azizul Ammar. Bisa dipanggil
@@ -29,6 +30,7 @@ MonoBehaviour:
     portraitData: {fileID: 998530573909269453, guid: 8d1656332ab0a3e42bf180e097296e02, type: 3}
     eyesValue: 0
     mouthValue: 0
+    gestureValue: 0.2
   - elementName: Player
     charName: Rahman
     dialogueSentece: Mas Ammar, sekolah dimana? kalau saya, kuliah semester 1 di
@@ -37,6 +39,7 @@ MonoBehaviour:
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
     eyesValue: 0
     mouthValue: 0
+    gestureValue: 0
   - elementName: NPC
     charName: Ammar
     dialogueSentece: Saya sekolah di Universitas Semarang, dan sekarang semester
@@ -45,6 +48,7 @@ MonoBehaviour:
     portraitData: {fileID: 998530573909269453, guid: 8d1656332ab0a3e42bf180e097296e02, type: 3}
     eyesValue: 0
     mouthValue: 0
+    gestureValue: 0
   - elementName: Player
     charName: Rahman
     dialogueSentece: Ohh... gitu, masuk jurusan apa? Kalau saya ikut jurusan Animasi
@@ -52,6 +56,7 @@ MonoBehaviour:
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
     eyesValue: 0
     mouthValue: 0
+    gestureValue: 0
   - elementName: NPC
     charName: Ammar
     dialogueSentece: Kalau saya masuk jurusan pembuatan game
@@ -59,6 +64,7 @@ MonoBehaviour:
     portraitData: {fileID: 998530573909269453, guid: 8d1656332ab0a3e42bf180e097296e02, type: 3}
     eyesValue: 0
     mouthValue: 0
+    gestureValue: 0
   autoFillPortraitData:
   - charName: Rahman
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}

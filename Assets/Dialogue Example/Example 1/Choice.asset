@@ -20,6 +20,7 @@ MonoBehaviour:
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
     eyesValue: 0
     mouthValue: 0
+    gestureValue: 0
   autoFillPortraitData: []
   isHasChoice: 1
   choiceList:
@@ -27,6 +28,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 51dbd200b1a15294991307d2c4f43d01, type: 2}
   - {fileID: 11400000, guid: 012bd9777038d0f46b9925d2a1191a65, type: 2}
   - {fileID: 11400000, guid: 87335e6dc5358a14abe5d5651e32f6f3, type: 2}
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: ae4687486b322f549a3b8207d5a91e03, type: 3}
   isUseTransition: 0
   updateSomething: 0

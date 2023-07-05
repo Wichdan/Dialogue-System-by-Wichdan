@@ -28,7 +28,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rahman Eyes
+  m_Name: Base Eyes
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: eyesValue
@@ -36,7 +36,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -85,7 +85,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 0894bcc6f671f7046bc9d39cc1e9e73f, type: 2}
+    m_Motion: {fileID: 7400000, guid: 105dedfddc445714fa6e35a6faa7bf10, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -93,7 +93,7 @@ BlendTree:
     m_DirectBlendParameter: eyesValue
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: cc0f179e614171147853eadd25cc7bd4, type: 2}
+    m_Motion: {fileID: 7400000, guid: ab97e97c806d53c469d44f7bfdd61213, type: 2}
     m_Threshold: 0.1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -101,7 +101,7 @@ BlendTree:
     m_DirectBlendParameter: eyesValue
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: d0d4ac8f6a72a4749815ca40ddd3d977, type: 2}
+    m_Motion: {fileID: 7400000, guid: 19d00aab64f962449864191f5cdc625f, type: 2}
     m_Threshold: 0.2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -109,7 +109,7 @@ BlendTree:
     m_DirectBlendParameter: eyesValue
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 25f8ffe102fed234496fb4c49ed12ea3, type: 2}
+    m_Motion: {fileID: 7400000, guid: 986de15392c4eb645a05c37fad3883fa, type: 2}
     m_Threshold: 0.3
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1

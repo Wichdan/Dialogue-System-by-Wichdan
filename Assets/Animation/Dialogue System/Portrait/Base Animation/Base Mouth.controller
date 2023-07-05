@@ -81,7 +81,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rahman Mouth
+  m_Name: Base Mouth
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: mouthValue
@@ -89,13 +89,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isTalk
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -118,7 +118,7 @@ BlendTree:
   m_Name: MouthValue
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: cafc283d5af5d8244a0f3a455b994ad8, type: 2}
+    m_Motion: {fileID: 7400000, guid: 5ebdd2b1cd239aa45ba9a8bcb8891c8e, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -126,7 +126,7 @@ BlendTree:
     m_DirectBlendParameter: mouthValue
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 8c24f24bee495c84e8609b99d1137d59, type: 2}
+    m_Motion: {fileID: 7400000, guid: 9a0a6ed7ee339c94182290facb6d7efa, type: 2}
     m_Threshold: 0.1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -134,7 +134,7 @@ BlendTree:
     m_DirectBlendParameter: mouthValue
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 722c840100938c24d940bade21a56f9e, type: 2}
+    m_Motion: {fileID: 7400000, guid: 696ec7b274207ff47b7741b103088dde, type: 2}
     m_Threshold: 0.2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -142,7 +142,7 @@ BlendTree:
     m_DirectBlendParameter: mouthValue
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 17bd0a298765f39498ed679b4326feb3, type: 2}
+    m_Motion: {fileID: 7400000, guid: 71ebb427fb07a31428dde6e69bd752ca, type: 2}
     m_Threshold: 0.3
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -190,7 +190,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rahman Talk
+  m_Name: Talk
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -204,7 +204,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ae84d435a25ecea4b91dfadafa776400, type: 2}
+  m_Motion: {fileID: 7400000, guid: 787de69d0e4dcc94d8d50064e21a36e8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

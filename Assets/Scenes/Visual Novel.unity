@@ -353,6 +353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8133989339925538379, guid: 89006b619f9baf94aa9aeeb9e5092dfe, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89006b619f9baf94aa9aeeb9e5092dfe, type: 3}
 --- !u!1 &494189813

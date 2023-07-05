@@ -19,16 +19,16 @@ MonoBehaviour:
       Bisa dipanggil Rahman
     charOrder: 0
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
-    eyesValue: 0.1
-    mouthValue: 0.3
+    eyesValue: 0
+    mouthValue: 0
   - elementName: NPC
     charName: '?'
     dialogueSentece: Waalaikumsalam, salam kenal namaku Azizul Ammar. Bisa dipanggil
       Ammar
     charOrder: 2
     portraitData: {fileID: 998530573909269453, guid: 8d1656332ab0a3e42bf180e097296e02, type: 3}
-    eyesValue: 0.2
-    mouthValue: 0.2
+    eyesValue: 0
+    mouthValue: 0
   - elementName: Player
     charName: Rahman
     dialogueSentece: Mas Ammar, sekolah dimana? kalau saya, kuliah semester 1 di

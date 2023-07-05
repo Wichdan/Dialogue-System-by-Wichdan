@@ -104,7 +104,7 @@ public class DialogueManager : MonoBehaviour
 
         if (isCanNext && !isPrint)
             NextConversation();
-        
+
     }
 
     public void SetDialogueRef(Dialogue reference) => dialogueRef = reference;
@@ -256,6 +256,7 @@ public class DialogueManager : MonoBehaviour
     //skip dialog
     public void SkipDialogue()
     {
+        SetTalkingAnimation(false);
         dialogueIndex = dialogueRef.dialogueData.Capacity - 1;
         StartConversation();
     }
@@ -377,8 +378,11 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void SwapPrint() => isPrint = !isPrint;
-    void SwapNext() => isCanNext = !isCanNext;
+    void SwapPrint()
+    {
+        if(isHide) return;
+        isPrint = !isPrint;
+    }
     public bool GetUpdateSomething() => updateSomething;
     void CheckUpdateSomething() => updateSomething = dialogueRef.updateSomething;
 

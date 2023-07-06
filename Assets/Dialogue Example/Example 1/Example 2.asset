@@ -15,24 +15,28 @@ MonoBehaviour:
   dialogueData:
   - elementName: Player
     charName: Rahman
-    dialogueSentece: Assalamualaikum, perkenalkan namaku Nur Rahman, salam kenal.
-      Bisa dipanggil Rahman
-    charOrder: 0
+    dialogueSentece: <color=white>Assalamualaikum, perkenalkan namaku <color=yellow>Nur
+      <color=green>Rahman<color=white>, salam kenal. Bisa dipanggil Rahman
+    speakerOrder: 0
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
     eyesValue: 0
     mouthValue: 0
+    gestureValue: 0
   - elementName: NPC
     charName: '?'
-    dialogueSentece: Waalaikumsalam, salam kenal namaku Adi
-    charOrder: 2
+    dialogueSentece: <color=white>Waalaikumsalam, salam kenal namaku Adi
+    speakerOrder: 3
     portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
+    gestureValue: 0
   autoFillPortraitData:
   - charName: Rahman
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
   isHasChoice: 0
   choiceList: []
   background: {fileID: 21300000, guid: 703c106a08ed86741b2564aaa6d61a74, type: 3}
+  isUseBackground: 1
+  isNotUseSentenceBG: 1
   isUseTransition: 1
-  updateSomething: 0
+  isUpdateSomething: 0

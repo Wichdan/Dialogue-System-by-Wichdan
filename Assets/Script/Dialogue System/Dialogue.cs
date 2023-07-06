@@ -20,10 +20,15 @@ public class Dialogue : ScriptableObject
     public bool isHasChoice;
     public List<Dialogue> choiceList;
 
-    [Header("Other")]
+    [Header("Background")]
     public Sprite background;
+    public bool isUseBackground, isNotUseSentenceBG;
+
+    [Header("Start Transition")]
     public bool isUseTransition;
-    public bool updateSomething;
+
+    [Header("Get/Update Something after dialogue")]
+    public bool isUpdateSomething;
 
     private void OnEnable()
     {
@@ -49,8 +54,8 @@ public class Conversation
     [TextArea(1, 3)]
     public string dialogueSentece;
 
-    [Header("Portrait Order")]
-    public CharacterOrder charOrder;
+    [Header("Speaker")]
+    public SpeakerOrder speakerOrder;
     public GameObject portraitData;
 
     [Header("Face Animation")]
@@ -63,7 +68,7 @@ public class Conversation
     [Range(0,1)]
     public float gestureValue;
 
-    public enum CharacterOrder
+    public enum SpeakerOrder
     {
         Right, Mid, Left, None
     }

@@ -16,13 +16,16 @@ MonoBehaviour:
   - elementName: Kondisi
     charName: Kamu
     dialogueSentece: 2
-    charOrder: 0
+    speakerOrder: 0
     portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
+    gestureValue: 0
   autoFillPortraitData: []
   isHasChoice: 0
   choiceList: []
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: ae4687486b322f549a3b8207d5a91e03, type: 3}
+  isUseBackground: 1
+  isNotUseSentenceBG: 0
   isUseTransition: 1
-  updateSomething: 1
+  isUpdateSomething: 1

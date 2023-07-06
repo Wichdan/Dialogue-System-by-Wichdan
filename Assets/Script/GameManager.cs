@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (DialogueManager.singleton.GetUpdateSomething() && index < dialogues.Capacity - 1)
+        if (DialogueManager.singleton.UpdateSomething && index < dialogues.Capacity - 1)
         {
             Debug.Log("A");
             index++;

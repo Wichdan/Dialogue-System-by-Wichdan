@@ -10,23 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fe0a2619e8b06848bef50b53fb6b40e, type: 3}
-  m_Name: Pilih kondisi ketiga
+  m_Name: Pilihan 4 - 6
   m_EditorClassIdentifier: 
   dialogueData:
   - elementName: Kondisi
     charName: Kamu
-    dialogueSentece: Benar!
-    charOrder: 0
+    dialogueSentece: Hm...
+    speakerOrder: 0
     portraitData: {fileID: 0}
     eyesValue: 0
     mouthValue: 0
+    gestureValue: 0
   autoFillPortraitData: []
   isHasChoice: 1
   choiceList:
-  - {fileID: 11400000, guid: 9bd1083671891d54482b0a1ef91fc567, type: 2}
-  - {fileID: 11400000, guid: 29e2e2ce710bd514b95d1b2921715b88, type: 2}
-  - {fileID: 11400000, guid: 66c7c2bd5f015cc408c95c829c12afc7, type: 2}
-  - {fileID: 11400000, guid: 74fdc8ec77e6ddd4084a7b57148854d8, type: 2}
-  background: {fileID: 0}
-  isUseTransition: 1
-  updateSomething: 0
+  - {fileID: 11400000, guid: 87335e6dc5358a14abe5d5651e32f6f3, type: 2}
+  - {fileID: 11400000, guid: c72887c8c18992a459a81e6b26030794, type: 2}
+  - {fileID: 11400000, guid: 7d386638d9598ba43bdbd8bd7efae98b, type: 2}
+  - {fileID: 11400000, guid: de411d2ae937c3f4a8bfa07e9eadc19f, type: 2}
+  background: {fileID: 21300000, guid: ae4687486b322f549a3b8207d5a91e03, type: 3}
+  isUseBackground: 1
+  isNotUseSentenceBG: 0
+  isUseTransition: 0
+  isUpdateSomething: 0

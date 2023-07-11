@@ -13,10 +13,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI textSentenceTMP;
 
     [Header("Sentence History")]
-    [SerializeField] List<TextMeshProUGUI> textHistoryTMP;
+    [SerializeField] GameObject textHistoryPanel;
 
     [Header("Speaker")]
-    [SerializeField] List<Speaker> speakers;
+    [SerializeField] List<Speaker> speakerReference;
+    [SerializeField] string allCharName;
 
     [Header("Object Reference")]
     [SerializeField] GameObject doneTalkingImg;
@@ -112,7 +113,6 @@ public class DialogueManager : MonoBehaviour
 
         if (isCanNext && !isPrint)
             NextConversation();
-
     }
 
     public void SetDialogueRef(Dialogue reference) => dialogueRef = reference;
@@ -165,7 +165,7 @@ public class DialogueManager : MonoBehaviour
     {
         int charOrder = (int)dialogueRef.dialogueData[conversationIndex].speakerOrder;
         //isi dan hidupkan nama panel
-        for (int i = 0; i < speakers.Capacity; i++)
+        for (int i = 0; i < speakerReference.Capacity; i++)
         {
             //menghidupkan / mematikan CharOrder nama sesuai dengan ordernya
             if (charOrder != i)
@@ -175,78 +175,126 @@ public class DialogueManager : MonoBehaviour
                 SetNameAndPortraitMask(i, true);
                 if (dialogueRef.dialogueData[conversationIndex].portraitData != null)
                 {
-                    SetPortraitSprite(i);
-                    SetAndPlayEyesAnimation(i);
-                    SetAndPlayMouthAnimation(i);
-                    PlayGestureAnimation(i);
+                    InitialPortraitData(i);
+                    SetCurrentPortraitData(i);
                 }
+            }
+
+            if (dialogueRef.dialogueData[conversationIndex].charName == allCharName)
+            {
+                speakerReference[i].mask.SetActive(false);
+                SetAllPortraitData();
             }
         }
     }
 
     void SetNameAndPortraitMask(int index, bool condition)
     {
-        speakers[index].charNamePanel.SetActive(condition);
-        speakers[index].charNameTxt.text = dialogueRef.dialogueData[conversationIndex].charName;
-        speakers[index].mask.SetActive(!condition);
+        speakerReference[index].charNamePanel.SetActive(condition);
+        speakerReference[index].charNameTxt.text = dialogueRef.dialogueData[conversationIndex].charName;
+        speakerReference[index].mask.SetActive(!condition);
     }
 
     void SetPortraitSprite(int index)
     {
-        speakers[index].portrait.sprite =
-        dialogueRef.dialogueData[conversationIndex].portraitData.GetComponent<PortraitData>().portrait;
-        if (speakers[index].portrait.sprite != null)
-            speakers[index].portrait.gameObject.SetActive(true);
-        else if (speakers[index].portrait.sprite == null)
-            speakers[index].portrait.gameObject.SetActive(false);
+        if (speakerReference[index].portrait.sprite != null)
+            speakerReference[index].portrait.gameObject.SetActive(true);
+        else
+            speakerReference[index].portrait.gameObject.SetActive(false);
     }
 
     void SetAndPlayEyesAnimation(int index)
     {
-        speakers[index].eyesAnim.runtimeAnimatorController =
-        dialogueRef.dialogueData[conversationIndex].portraitData.GetComponent<PortraitData>().eyesCharCtrller;
-
-        if (speakers[index].eyesAnim.runtimeAnimatorController == null)
-            speakers[index].eyesAnim.gameObject.SetActive(false);
+        if (speakerReference[index].eyesAnim.runtimeAnimatorController == null)
+            speakerReference[index].eyesAnim.gameObject.SetActive(false);
         else
-            speakers[index].eyesAnim.gameObject.SetActive(true);
-
-        speakers[index].eyesAnim.SetFloat("eyesValue", dialogueRef.dialogueData[conversationIndex].eyesValue);
+        {
+            speakerReference[index].eyesAnim.gameObject.SetActive(true);
+            speakerReference[index].eyesAnim.SetFloat("eyesValue", dialogueRef.dialogueData[conversationIndex].eyesValue);
+        }
     }
 
     void SetAndPlayMouthAnimation(int index)
     {
-        speakers[index].mouthAnim.runtimeAnimatorController =
-        dialogueRef.dialogueData[conversationIndex].portraitData.GetComponent<PortraitData>().mouthCharCtrller;
-
-        if (speakers[index].mouthAnim.runtimeAnimatorController == null)
-            speakers[index].mouthAnim.gameObject.SetActive(false);
+        if (speakerReference[index].mouthAnim.runtimeAnimatorController == null)
+            speakerReference[index].mouthAnim.gameObject.SetActive(false);
         else
-            speakers[index].mouthAnim.gameObject.SetActive(true);
-
-        speakers[index].mouthAnim.SetFloat("mouthValue", dialogueRef.dialogueData[conversationIndex].mouthValue);
+        {
+            speakerReference[index].mouthAnim.gameObject.SetActive(true);
+            speakerReference[index].mouthAnim.SetFloat("mouthValue", dialogueRef.dialogueData[conversationIndex].mouthValue);
+        }
     }
 
-    void PlayTalkingAnimation(bool isTalk)
+    void InitialPortraitData(int index)
     {
-        if (dialogueRef.dialogueData[conversationIndex].portraitData == null) return;
+        PortraitData portraitData;
+        portraitData = dialogueRef.dialogueData[conversationIndex].portraitData.GetComponent<PortraitData>();
+
+        if (portraitData.speakerData.Capacity == 1)
+        {
+            speakerReference[index].portrait.sprite = portraitData.speakerData[0].portrait;
+            speakerReference[index].eyesAnim.runtimeAnimatorController = portraitData.speakerData[0].eyesCharCtrller;
+            speakerReference[index].mouthAnim.runtimeAnimatorController = portraitData.speakerData[0].mouthCharCtrller;
+        }
+        else
+        {
+            for (int i = 0; i < portraitData.speakerData.Capacity; i++)
+            {
+                speakerReference[i].portrait.sprite = portraitData.speakerData[i].portrait;
+                speakerReference[i].eyesAnim.runtimeAnimatorController = portraitData.speakerData[i].eyesCharCtrller;
+                speakerReference[i].mouthAnim.runtimeAnimatorController = portraitData.speakerData[i].mouthCharCtrller;
+            }
+        }
+    }
+
+    void SetCurrentPortraitData(int index)
+    {
+        SetPortraitSprite(index);
+        SetAndPlayEyesAnimation(index);
+        SetAndPlayMouthAnimation(index);
+        PlayGestureAnimation(index);
+    }
+
+    void SetAllPortraitData()
+    {
+        for (int i = 0; i < speakerReference.Capacity; i++)
+        {
+            SetPortraitSprite(i);
+            SetAndPlayEyesAnimation(i);
+            SetAndPlayMouthAnimation(i);
+            PlayGestureAnimation(i);
+        }
+    }
+
+    void CheckTalkingAnimation(bool isTalk)
+    {
         int charOrder = (int)dialogueRef.dialogueData[conversationIndex].speakerOrder;
-        for (int i = 0; i < speakers.Capacity; i++)
+        for (int i = 0; i < speakerReference.Capacity; i++)
         {
             if (charOrder == i)
-                speakers[i].mouthAnim.SetBool("isTalk", isTalk);
+                PlayTalkingAnimation(i, isTalk);
+
+            if (dialogueRef.dialogueData[conversationIndex].charName == allCharName)
+                PlayTalkingAnimation(i, isTalk);
         }
+    }
+
+    void PlayTalkingAnimation(int index, bool isTalk)
+    {
+        if (speakerReference[index].portrait.gameObject.activeSelf)
+            speakerReference[index].mouthAnim.SetBool("isTalk", isTalk);
     }
 
     void PlayGestureAnimation(int index)
     {
-        speakers[index].gestureAnim.SetFloat("gestureValue", dialogueRef.dialogueData[conversationIndex].gestureValue);
+        if (speakerReference[index].portrait.gameObject.activeSelf)
+            speakerReference[index].gestureAnim.SetFloat("gestureValue", dialogueRef.dialogueData[conversationIndex].gestureValue);
     }
 
     //mengecek jika data sudah sampe akhir maka dialog selesai
     void EndConversation()
     {
-        Debug.Log("End Dialogue!");
+        //Debug.Log("End Dialogue!");
         SetTransition(startTransition, false);
         CheckUpdateSomething();
         if (dialogueRef.isHasChoice)
@@ -270,8 +318,8 @@ public class DialogueManager : MonoBehaviour
     //skip dialog
     public void SkipDialogue()
     {
-        PlayTalkingAnimation(false);
-        conversationIndex = dialogueRef.dialogueData.Capacity - 1;
+        CheckTalkingAnimation(false);
+        conversationIndex = dialogueRef.dialogueData.Capacity;
         StartConversation();
     }
 
@@ -358,13 +406,9 @@ public class DialogueManager : MonoBehaviour
 
     void SetBackground()
     {
-        if (dialogueRef.isUseBackground)
-        {
-            backgroundPanel.enabled = true;
-            backgroundPanel.sprite = dialogueRef.background;
-        }
-        else
-            backgroundPanel.enabled = false;
+        bool condition = dialogueRef.background != null;
+        backgroundPanel.enabled = condition;
+        backgroundPanel.sprite = dialogueRef.background;
     }
 
     void SetTransition(Animator anim, bool condition)
@@ -382,58 +426,60 @@ public class DialogueManager : MonoBehaviour
     void SetTalkSfx()
     {
         if (dialogueRef.dialogueData[conversationIndex].portraitData == null) return;
-        talkAudioSource.clip =
-        dialogueRef.dialogueData[conversationIndex].portraitData.GetComponent<PortraitData>().talkSfx;
+        talkAudioSource.clip = dialogueRef.dialogueData[conversationIndex].portraitData.GetComponent<PortraitData>().talkSfx;
     }
 
     void ResetSpeaker()
     {
-        for (int i = 0; i < speakers.Capacity; i++)
+        for (int i = 0; i < speakerReference.Capacity; i++)
         {
-            speakers[i].portrait.gameObject.SetActive(false);
-            speakers[i].portrait.sprite = null;
-            speakers[i].eyesAnim.runtimeAnimatorController = null;
-            speakers[i].mouthAnim.runtimeAnimatorController = null;
+            speakerReference[i].portrait.gameObject.SetActive(false);
+            speakerReference[i].portrait.sprite = null;
+            speakerReference[i].eyesAnim.runtimeAnimatorController = null;
+            speakerReference[i].mouthAnim.runtimeAnimatorController = null;
         }
     }
 
     void PrintAllSentence()
     {
-        if(sentenceHistoryPanel.activeSelf) return;
+        if (sentenceHistoryPanel.activeSelf) return;
         if (isHide) return;
         isPrint = !isPrint;
     }
 
     void CheckUseSentenceBG()
     {
-        sentencePanel.enabled = !dialogueRef.isNotUseSentenceBG;
-        namePanel.SetActive(!dialogueRef.isNotUseSentenceBG);
+        bool checkAltSentenceBG = dialogueRef.altSentenceBG != null;
+        if (checkAltSentenceBG)
+        {
+            sentencePanel.enabled = checkAltSentenceBG;
+            namePanel.SetActive(checkAltSentenceBG);
+        }
+
+        bool checkNotUseSentenceBG = dialogueRef.isNotUseSentenceBG;
+        if (checkNotUseSentenceBG)
+        {
+            sentencePanel.enabled = !checkNotUseSentenceBG;
+            namePanel.SetActive(!checkNotUseSentenceBG);
+        }
     }
 
     public void PrintSentenceHistoryBtn()
     {
+        TextMeshProUGUI[] historyText = textHistoryPanel.GetComponentsInChildren<TextMeshProUGUI>();
         for (int i = 0; i <= conversationIndex; i++)
         {
-            textHistoryTMP[i].text =
+            historyText[i].text =
             dialogueRef.dialogueData[i].charName + ": "
             + dialogueRef.dialogueData[i].dialogueSentece;
-        }
-
-        Button sentenceHistoryBtn = null;
-        for (int i = 0; i < textHistoryTMP.Capacity; i++)
-        {
-            sentenceHistoryBtn = textHistoryTMP[i].GetComponentInParent<Button>();
-            if (textHistoryTMP[i].text != "")
-                sentenceHistoryBtn.interactable = true;
-            else
-                sentenceHistoryBtn.interactable = false;
         }
     }
 
     void ResetSentenceHistory()
     {
-        for (int i = 0; i < textHistoryTMP.Capacity; i++)
-            textHistoryTMP[i].text = "";
+        TextMeshProUGUI[] historyText = textHistoryPanel.GetComponentsInChildren<TextMeshProUGUI>();
+        for (int i = 0; i < historyText.Length; i++)
+            historyText[i].text = "";
     }
 
     public bool UpdateSomething => isUpdateSomething;
@@ -448,7 +494,7 @@ public class DialogueManager : MonoBehaviour
         int visibleCount = 0;
         bool isDone = false;
         doneTalkingImg.SetActive(isDone);
-        PlayTalkingAnimation(!isDone);
+        CheckTalkingAnimation(!isDone);
         talkAudioSource.Play();
 
         while (!isDone)
@@ -485,6 +531,6 @@ public class DialogueManager : MonoBehaviour
 
         talkAudioSource.Stop();
         doneTalkingImg.SetActive(isDone);
-        PlayTalkingAnimation(!isDone);
+        CheckTalkingAnimation(!isDone);
     }
 }

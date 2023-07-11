@@ -48,3 +48,9 @@ MonoBehaviour:
   eyesCharCtrller: {fileID: 22100000, guid: 8256811dfc9fbed4aa63f531a9409245, type: 2}
   mouthCharCtrller: {fileID: 22100000, guid: e2b28d3716435e5499e0a44ef073f74d, type: 2}
   talkSfx: {fileID: 0}
+  speakerData:
+  - speakerName: Ammar
+    portrait: {fileID: 21300000, guid: 51306893fca5db34684d99136a124922, type: 3}
+    eyesCharCtrller: {fileID: 22100000, guid: 8256811dfc9fbed4aa63f531a9409245, type: 2}
+    mouthCharCtrller: {fileID: 22100000, guid: e2b28d3716435e5499e0a44ef073f74d, type: 2}
+    talkSfx: {fileID: 0}

@@ -22,7 +22,8 @@ public class Dialogue : ScriptableObject
 
     [Header("Background")]
     public Sprite background;
-    public bool isUseBackground, isNotUseSentenceBG;
+    public Sprite altSentenceBG;
+    public bool isNotUseSentenceBG;
 
     [Header("Start Transition")]
     public bool isUseTransition;

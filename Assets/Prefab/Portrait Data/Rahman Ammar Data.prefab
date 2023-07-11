@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &998530573909269453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 998530573909269452}
+  - component: {fileID: 998530573909269451}
+  m_Layer: 0
+  m_Name: Rahman Ammar Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &998530573909269452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998530573909269453}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998530573909269451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998530573909269453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccebdd6cfed49f945a7b4b49ab1d1994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portrait: {fileID: 21300000, guid: b9b4ab797426c3d4ba2550310f535c14, type: 3}
+  eyesCharCtrller: {fileID: 22100000, guid: 71f7886c6913c3248b88b8e2bc042be8, type: 2}
+  mouthCharCtrller: {fileID: 22100000, guid: 7f8ed1782853b744d8afc1c63d5e1ce7, type: 2}
+  talkSfx: {fileID: 0}
+  speakerData:
+  - speakerName: Rahman
+    portrait: {fileID: 21300000, guid: b9b4ab797426c3d4ba2550310f535c14, type: 3}
+    eyesCharCtrller: {fileID: 22100000, guid: 71f7886c6913c3248b88b8e2bc042be8, type: 2}
+    mouthCharCtrller: {fileID: 22100000, guid: 7f8ed1782853b744d8afc1c63d5e1ce7, type: 2}
+    talkSfx: {fileID: 0}
+  - speakerName: 
+    portrait: {fileID: 0}
+    eyesCharCtrller: {fileID: 0}
+    mouthCharCtrller: {fileID: 0}
+    talkSfx: {fileID: 0}
+  - speakerName: Ammar
+    portrait: {fileID: 21300000, guid: 51306893fca5db34684d99136a124922, type: 3}
+    eyesCharCtrller: {fileID: 22100000, guid: 8256811dfc9fbed4aa63f531a9409245, type: 2}
+    mouthCharCtrller: {fileID: 22100000, guid: e2b28d3716435e5499e0a44ef073f74d, type: 2}
+    talkSfx: {fileID: 0}

@@ -19,7 +19,7 @@ MonoBehaviour:
       salam kenal. Bisa dipanggil Rahman
     speakerOrder: 0
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
-    eyesValue: 0
+    eyesValue: 0.1
     mouthValue: 0
     gestureValue: 0.1
   - elementName: NPC
@@ -65,6 +65,23 @@ MonoBehaviour:
     eyesValue: 0
     mouthValue: 0
     gestureValue: 0
+  - elementName: Dosen
+    charName: Pak Dosen
+    dialogueSentece: Assalamualaikum kalian semua
+    speakerOrder: 1
+    portraitData: {fileID: 998530573909269453, guid: e283b179676db0e45b35dd0002e23495, type: 3}
+    eyesValue: 0
+    mouthValue: 0
+    gestureValue: 0
+  - elementName: Semua
+    charName: Semua Orang
+    dialogueSentece: Ini sistem dialog, dibuat oleh Arthic, Terima kasih telah menggunakan
+      ini!
+    speakerOrder: 1
+    portraitData: {fileID: 998530573909269453, guid: 93b273d8e86a41645b4da8c0a23824b2, type: 3}
+    eyesValue: 0.1
+    mouthValue: 0
+    gestureValue: 0.1
   autoFillPortraitData:
   - charName: Rahman
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}
@@ -73,7 +90,7 @@ MonoBehaviour:
   isHasChoice: 0
   choiceList: []
   background: {fileID: 21300000, guid: ae4687486b322f549a3b8207d5a91e03, type: 3}
-  isUseBackground: 1
+  altSentenceBG: {fileID: 0}
   isNotUseSentenceBG: 0
   isUseTransition: 1
   isUpdateSomething: 1

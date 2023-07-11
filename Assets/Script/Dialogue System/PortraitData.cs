@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PortraitData : MonoBehaviour
 {
-    public Sprite portrait;
-    public RuntimeAnimatorController eyesCharCtrller;
-    public RuntimeAnimatorController mouthCharCtrller;
+    public List<SpeakerData> speakerData;
     public AudioClip talkSfx;
+
+    [System.Serializable]
+    public struct SpeakerData
+    {
+        public string speakerName;
+        public Sprite portrait;
+        public RuntimeAnimatorController eyesCharCtrller;
+        public RuntimeAnimatorController mouthCharCtrller;
+    }
 }

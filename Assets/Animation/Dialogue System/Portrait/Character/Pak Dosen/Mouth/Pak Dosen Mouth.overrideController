@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pak Dosen Mouth
+  m_Controller: {fileID: 9100000, guid: f015bfb2b4d9b57429890f36f20f6fd7, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9a0a6ed7ee339c94182290facb6d7efa, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7fee96d17283ef744b86297c2e4bc4b0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 71ebb427fb07a31428dde6e69bd752ca, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 20974a081417141439b2480ca2a3b28d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 696ec7b274207ff47b7741b103088dde, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6ab237885a2c5fe4781b1a700b2f8fa4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5ebdd2b1cd239aa45ba9a8bcb8891c8e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 299771aa270b97f4d8c58e566529d0e8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 787de69d0e4dcc94d8d50064e21a36e8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 108ed743ed91aaa4ab4b7fd701b10807, type: 2}

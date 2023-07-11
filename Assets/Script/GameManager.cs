@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {
         if (DialogueManager.singleton.UpdateSomething && index < dialogues.Capacity - 1)
         {
-            Debug.Log("A");
+            //Debug.Log("A");
             index++;
             StartDialogue();
         }
@@ -33,5 +33,10 @@ public class GameManager : MonoBehaviour
     {
         int curScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(curScene);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

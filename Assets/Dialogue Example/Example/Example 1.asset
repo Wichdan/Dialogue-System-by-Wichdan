@@ -22,6 +22,7 @@ MonoBehaviour:
     eyesValue: 0.1
     mouthValue: 0
     gestureValue: 0.1
+    voiceOverClip: {fileID: 8300000, guid: c15fa7d459bc1bd4297488d15b2952a3, type: 3}
   - elementName: NPC
     charName: '?'
     dialogueSentece: Waalaikumsalam, salam kenal namaku <color=red>Azizul Ammar</color>.
@@ -31,6 +32,7 @@ MonoBehaviour:
     eyesValue: 0
     mouthValue: 0
     gestureValue: 0.2
+    voiceOverClip: {fileID: 8300000, guid: f7d60641d3eda554292c1149578287f3, type: 3}
   - elementName: Player
     charName: Rahman
     dialogueSentece: Mas Ammar, sekolah dimana? kalau saya, kuliah semester 1 di
@@ -40,6 +42,7 @@ MonoBehaviour:
     eyesValue: 0
     mouthValue: 0
     gestureValue: 0
+    voiceOverClip: {fileID: 0}
   - elementName: NPC
     charName: Ammar
     dialogueSentece: Saya sekolah di Universitas Semarang, dan sekarang semester
@@ -49,6 +52,7 @@ MonoBehaviour:
     eyesValue: 0
     mouthValue: 0
     gestureValue: 0
+    voiceOverClip: {fileID: 0}
   - elementName: Player
     charName: Rahman
     dialogueSentece: Ohh... gitu, masuk jurusan apa? Kalau saya ikut jurusan Animasi
@@ -57,6 +61,7 @@ MonoBehaviour:
     eyesValue: 0
     mouthValue: 0
     gestureValue: 0
+    voiceOverClip: {fileID: 0}
   - elementName: NPC
     charName: Ammar
     dialogueSentece: Kalau saya masuk jurusan pembuatan game
@@ -65,14 +70,34 @@ MonoBehaviour:
     eyesValue: 0
     mouthValue: 0
     gestureValue: 0
+    voiceOverClip: {fileID: 0}
   - elementName: Dosen
     charName: Pak Dosen
-    dialogueSentece: Assalamualaikum kalian semua
+    dialogueSentece: Assalamualaikum, kalian semua sedang ngapain?
     speakerOrder: 1
     portraitData: {fileID: 998530573909269453, guid: e283b179676db0e45b35dd0002e23495, type: 3}
     eyesValue: 0
     mouthValue: 0
     gestureValue: 0
+    voiceOverClip: {fileID: 0}
+  - elementName: Player & NPC
+    charName: Rahman & Ammar
+    dialogueSentece: Waalaikumsalam, kita sedang saling perkenalan pak
+    speakerOrder: 1
+    portraitData: {fileID: 998530573909269453, guid: aabe4718b20a6ea45ba2dce325217f93, type: 3}
+    eyesValue: 0
+    mouthValue: 0
+    gestureValue: 0
+    voiceOverClip: {fileID: 0}
+  - elementName: Dosen
+    charName: Pak Dosen
+    dialogueSentece: Oh gitu, perkenalkan nama saya <color=red>Faizal</color>
+    speakerOrder: 1
+    portraitData: {fileID: 998530573909269453, guid: e283b179676db0e45b35dd0002e23495, type: 3}
+    eyesValue: 0
+    mouthValue: 0
+    gestureValue: 0
+    voiceOverClip: {fileID: 8300000, guid: f59c3aca39e19de4986bf3c265d10983, type: 3}
   - elementName: Semua
     charName: Semua Orang
     dialogueSentece: Ini sistem dialog, dibuat oleh Arthic, Terima kasih telah menggunakan
@@ -82,6 +107,7 @@ MonoBehaviour:
     eyesValue: 0.1
     mouthValue: 0
     gestureValue: 0.1
+    voiceOverClip: {fileID: 0}
   autoFillPortraitData:
   - charName: Rahman
     portraitData: {fileID: 998530573909269453, guid: e06e176e923572843bc33474f5585250, type: 3}

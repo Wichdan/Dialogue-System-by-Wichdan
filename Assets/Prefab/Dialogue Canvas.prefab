@@ -2911,7 +2911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8133989338085969970
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3455,7 +3455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8133989338371403068
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3871,7 +3871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8133989338528582048
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5068,7 +5068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8133989339159686858
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5322,8 +5322,9 @@ GameObject:
   - component: {fileID: 8133989339254352433}
   - component: {fileID: 8133989339254352434}
   - component: {fileID: 8133989339254352435}
-  - component: {fileID: 8786257428453321369}
   - component: {fileID: 8696514225045154988}
+  - component: {fileID: 8786257428453321369}
+  - component: {fileID: 2785554190257401064}
   - component: {fileID: 4376576222782993653}
   m_Layer: 5
   m_Name: Dialogue Canvas
@@ -5374,7 +5375,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &8133989339254352434
 MonoBehaviour:
@@ -5416,6 +5417,14 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!222 &8696514225045154988
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8133989339254352460}
+  m_CullTransparentMesh: 1
 --- !u!114 &8786257428453321369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5431,6 +5440,44 @@ MonoBehaviour:
   dialogueRef: {fileID: 0}
   textSentenceTMP: {fileID: 8133989339014729927}
   textHistoryPanel: {fileID: 1912721170247222191}
+  portraitManager: {fileID: 2785554190257401064}
+  doneTalkingImg: {fileID: 8133989338506771934}
+  dialoguePanel: {fileID: 8133989338909379080}
+  namePanel: {fileID: 8133989337925022974}
+  sentenceHistoryPanel: {fileID: 4625355898874199389}
+  sentencePanel: {fileID: 8133989339781124390}
+  backgroundPanel: {fileID: 3742835828415467819}
+  nextConversationBtn: {fileID: 6873522665891933184}
+  isAuto: 0
+  timeToNext: 3
+  textAutoTMP: {fileID: 8133989339692931502}
+  textSpeed: 0.05
+  txtSpdChanger: -1
+  textSpeedTMP: {fileID: 8133989339889714292}
+  choicePanel: {fileID: 8133989338432422294}
+  choiceBtn:
+  - {fileID: 8133989338859642134}
+  - {fileID: 8133989339309793880}
+  - {fileID: 8133989339858736962}
+  - {fileID: 8133989338131289410}
+  startTransition: {fileID: 7703313116806640678}
+  startDelay: 1
+  screenEffect: {fileID: 0}
+  voiceAudioSource: {fileID: 0}
+  isPlayOnStart: 0
+  isUpdateSomething: 0
+--- !u!114 &2785554190257401064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8133989339254352460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cef317e83e02646b1e9ed8dc1a95b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   speakerReference:
   - elementName: Right
     charNamePanel: {fileID: 8133989338085969971}
@@ -5456,40 +5503,9 @@ MonoBehaviour:
     eyesAnim: {fileID: 8133989338119567318}
     mouthAnim: {fileID: 8133989339496389488}
     gestureAnim: {fileID: 6877533057463996238}
-  allCharName: Semua Orang
-  doneTalkingImg: {fileID: 8133989338506771934}
-  dialoguePanel: {fileID: 8133989338909379080}
-  namePanel: {fileID: 8133989337925022974}
-  sentenceHistoryPanel: {fileID: 4625355898874199389}
-  sentencePanel: {fileID: 8133989339781124390}
-  backgroundPanel: {fileID: 3742835828415467819}
-  nextConversationBtn: {fileID: 6873522665891933184}
-  isAuto: 0
-  timeToNext: 3
-  textAutoTMP: {fileID: 8133989339692931502}
-  textSpeed: 0.05
-  txtSpdChanger: 0
-  textSpeedTMP: {fileID: 8133989339889714292}
-  choicePanel: {fileID: 8133989338432422294}
-  choiceBtn:
-  - {fileID: 8133989338859642134}
-  - {fileID: 8133989339309793880}
-  - {fileID: 8133989339858736962}
-  - {fileID: 8133989338131289410}
-  startTransition: {fileID: 7703313116806640678}
-  startDelay: 1
-  screenEffect: {fileID: 0}
-  talkAudioSource: {fileID: 0}
-  isPlayOnStart: 0
-  isUpdateSomething: 0
---- !u!222 &8696514225045154988
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8133989339254352460}
-  m_CullTransparentMesh: 1
+  twoOrMoreSpeakerName:
+  - Semua Orang
+  - Rahman & Ammar
 --- !u!82 &4376576222782993653
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5738,7 +5754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8133989339283987041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6047,7 +6063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8133989339624466217
 RectTransform:
   m_ObjectHideFlags: 0

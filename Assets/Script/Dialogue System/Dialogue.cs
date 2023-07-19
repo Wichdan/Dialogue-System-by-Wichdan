@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "new dialogue", menuName = "Dialogue System by Wichdan/Create Dialogue", order = 0)]
+[CreateAssetMenu(fileName = "new dialogue",
+menuName = "Dialogue System by Wichdan/Dialogue", order = 0)]
 public class Dialogue : ScriptableObject
 {
     [Header("Conversation")]
@@ -33,12 +34,13 @@ public class Dialogue : ScriptableObject
 
     private void OnEnable()
     {
-        if(dialogueData == null) return;
+        if (dialogueData == null) return;
         for (int i = 0; i < dialogueData.Capacity; i++)
         {
             for (int j = 0; j < autoFillPortraitData.Capacity; j++)
             {
-                if(autoFillPortraitData[j].charName == dialogueData[i].charName){
+                if (autoFillPortraitData[j].charName == dialogueData[i].charName)
+                {
                     dialogueData[i].portraitData = autoFillPortraitData[j].portraitData;
                 }
             }
@@ -62,12 +64,15 @@ public class Conversation
     [Header("Face Animation")]
     [Range(0, 1)]
     public float eyesValue;
-    [Range(0,1)]
+    [Range(0, 1)]
     public float mouthValue;
 
     [Header("Gesture Animation")]
-    [Range(0,1)]
+    [Range(0, 1)]
     public float gestureValue;
+
+    [Header("Voice")]
+    public AudioClip voiceOverClip;
 
     public enum SpeakerOrder
     {

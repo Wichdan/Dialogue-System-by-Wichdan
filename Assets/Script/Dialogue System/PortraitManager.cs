@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -8,8 +7,6 @@ public class PortraitManager : MonoBehaviour
 {
     [Header("Speaker")]
     [SerializeField] List<Speaker> speakerReference;
-    [SerializeField] List<string> twoOrMoreSpeakerName;
-
 
     [System.Serializable]
     public struct Speaker
@@ -59,13 +56,10 @@ public class PortraitManager : MonoBehaviour
                 SetPortraitMask(i, false);
             }
 
-            for (int j = 0; j < twoOrMoreSpeakerName.Capacity; j++)
+            if (dialogueRef.dialogueData[conversationIndex].hasMoreSpeakers)
             {
-                if (dialogueRef.dialogueData[conversationIndex].charName == twoOrMoreSpeakerName[j])
-                {
-                    speakerReference[i].mask.SetActive(false);
-                    SetAllPortraitData(dialogueRef, conversationIndex, portraitData);
-                }
+                speakerReference[i].mask.SetActive(false);
+                SetAllPortraitData(dialogueRef, conversationIndex, portraitData);
             }
         }
     }
@@ -170,11 +164,8 @@ public class PortraitManager : MonoBehaviour
             if (charOrder == i)
                 PlayTalkingAnimation(i, isTalk);
 
-            for (int j = 0; j < twoOrMoreSpeakerName.Capacity; j++)
-            {
-                if (dialogueRef.dialogueData[conversationIndex].charName == twoOrMoreSpeakerName[j])
-                    PlayTalkingAnimation(i, isTalk);
-            }
+            if (dialogueRef.dialogueData[conversationIndex].hasMoreSpeakers)
+                PlayTalkingAnimation(i, isTalk);
         }
 
         PortraitData portraitData = null;

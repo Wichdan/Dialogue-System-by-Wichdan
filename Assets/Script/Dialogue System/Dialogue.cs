@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "new dialogue",
-menuName = "Dialogue System by Wichdan/Dialogue", order = 0)]
+[CreateAssetMenu(fileName = "new dialogue", menuName = "Dialogue System by Wichdan/Dialogue", order = 0)]
 public class Dialogue : ScriptableObject
 {
     [Header("Conversation")]
@@ -60,6 +58,7 @@ public class Conversation
     [Header("Speaker")]
     public SpeakerOrder speakerOrder;
     public GameObject portraitData;
+    public bool hasMoreSpeakers;
 
     [Header("Face Animation")]
     [Range(0, 1)]
@@ -72,7 +71,7 @@ public class Conversation
     public float gestureValue;
 
     [Header("Voice")]
-    public AudioClip voiceOverClip;
+    public AudioClip voiceActorClip;
 
     public enum SpeakerOrder
     {

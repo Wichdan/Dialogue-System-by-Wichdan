@@ -19,9 +19,11 @@ MonoBehaviour:
       ini!
     speakerOrder: 1
     portraitData: {fileID: 998530573909269453, guid: aabe4718b20a6ea45ba2dce325217f93, type: 3}
+    hasMoreSpeakers: 1
     eyesValue: 0.1
     mouthValue: 0
     gestureValue: 0.1
+    voiceOverClip: {fileID: 0}
   autoFillPortraitData: []
   isHasChoice: 0
   choiceList: []

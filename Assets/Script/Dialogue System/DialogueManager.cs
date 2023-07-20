@@ -144,7 +144,7 @@ public class DialogueManager : MonoBehaviour
         SetBackground();
         SetAndPlayTalkSfx();
         CheckUseSentenceBG();
-        SetAndPlayVoiceOver();
+        SetAndPlayVoiceActor();
 
         StartCoroutine(TextAnimation());
     }
@@ -222,7 +222,7 @@ public class DialogueManager : MonoBehaviour
         txtSpdChanger++;
 
         if (txtSpdChanger == 0)
-            SetTextSpeed(0.07f, "Slow");
+            SetTextSpeed(0.075f, "Slow");
         else if (txtSpdChanger == 1)
             SetTextSpeed(0.03f, "Normal");
         else if (txtSpdChanger == 2)
@@ -286,7 +286,7 @@ public class DialogueManager : MonoBehaviour
     void SetAndPlayTalkSfx()
     {
         GameObject o_portraitData = dialogueRef.dialogueData[conversationIndex].portraitData;
-        if(o_portraitData == null) return;
+        if (o_portraitData == null) return;
         PortraitData portraitData = o_portraitData.GetComponent<PortraitData>();
         AudioClip talkSfx = portraitData.talkSfx;
         voiceAudioSource.loop = true;
@@ -294,11 +294,11 @@ public class DialogueManager : MonoBehaviour
         voiceAudioSource.Play();
     }
 
-    void SetAndPlayVoiceOver()
+    void SetAndPlayVoiceActor()
     {
-        AudioClip voiceOver = dialogueRef.dialogueData[conversationIndex].voiceOverClip;
-        if (voiceOver == null) return;
-        voiceAudioSource.clip = voiceOver;
+        AudioClip voiceActor = dialogueRef.dialogueData[conversationIndex].voiceActorClip;
+        if (voiceActor == null) return;
+        voiceAudioSource.clip = voiceActor;
         voiceAudioSource.loop = false;
         voiceAudioSource.Play();
     }
@@ -330,6 +330,7 @@ public class DialogueManager : MonoBehaviour
     public void PrintSentenceHistoryBtn()
     {
         TextMeshProUGUI[] historyText = textHistoryPanel.GetComponentsInChildren<TextMeshProUGUI>();
+
         for (int i = 0; i <= conversationIndex; i++)
         {
             historyText[i].text =

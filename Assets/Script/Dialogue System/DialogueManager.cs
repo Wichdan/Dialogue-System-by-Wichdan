@@ -30,7 +30,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI textAutoTMP;
 
     [Header("Text Speed")]
-    [SerializeField] float textSpeed = 0.05f;
+    [SerializeField] float textSpeed = 0.075f;
     [SerializeField] int txtSpdChanger = -1;
     [SerializeField] TextMeshProUGUI textSpeedTMP;
 
@@ -59,7 +59,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Reset()
     {
-        textSpeed = 0.05f;
+        textSpeed = 0.075f;
         txtSpdChanger = -1;
         startDelay = 1f;
     }
@@ -142,9 +142,8 @@ public class DialogueManager : MonoBehaviour
             choicePanel.SetActive(false);
 
         SetBackground();
-        SetAndPlayTalkSfx();
-        CheckUseSentenceBG();
         SetAndPlayVoiceActor();
+        CheckUseSentenceBG();
 
         StartCoroutine(TextAnimation());
     }
@@ -289,15 +288,21 @@ public class DialogueManager : MonoBehaviour
         if (o_portraitData == null) return;
         PortraitData portraitData = o_portraitData.GetComponent<PortraitData>();
         AudioClip talkSfx = portraitData.talkSfx;
-        voiceAudioSource.loop = true;
+
+        if (portraitData.talkSfx == null) return;
         voiceAudioSource.clip = talkSfx;
+        voiceAudioSource.loop = true;
         voiceAudioSource.Play();
     }
 
     void SetAndPlayVoiceActor()
     {
         AudioClip voiceActor = dialogueRef.dialogueData[conversationIndex].voiceActorClip;
-        if (voiceActor == null) return;
+        if (voiceActor == null)
+        {
+            SetAndPlayTalkSfx();
+            return;
+        }
         voiceAudioSource.clip = voiceActor;
         voiceAudioSource.loop = false;
         voiceAudioSource.Play();
@@ -329,14 +334,29 @@ public class DialogueManager : MonoBehaviour
 
     public void PrintSentenceHistoryBtn()
     {
+        isAuto = false;
         TextMeshProUGUI[] historyText = textHistoryPanel.GetComponentsInChildren<TextMeshProUGUI>();
+        ScrollRect scrollRect = textHistoryPanel.GetComponentInParent<ScrollRect>();
+        scrollRect.verticalNormalizedPosition = 1;
 
         for (int i = 0; i <= conversationIndex; i++)
         {
+            if (conversationIndex >= historyText.Length)
+            {
+                InstanceHistoryText(historyText[i]);
+                historyText = textHistoryPanel.GetComponentsInChildren<TextMeshProUGUI>();
+            }
+
             historyText[i].text =
             dialogueRef.dialogueData[i].charName + ": "
             + dialogueRef.dialogueData[i].dialogueSentece;
         }
+    }
+
+    void InstanceHistoryText(TextMeshProUGUI historyText)
+    {
+        TextMeshProUGUI text = historyText;
+        Instantiate(text.gameObject, textHistoryPanel.transform);
     }
 
     void ResetSentenceHistory()
@@ -372,23 +392,21 @@ public class DialogueManager : MonoBehaviour
             {
                 isDone = true;
                 isPrint = true;
-                DoneTalking(isDone);
-                yield return new WaitForSeconds(1.0f);
+                WhenDoneTalking(isDone);
             }
             else if (isPrint && visibleCount <= totalVisibleCharacters)
             {
                 isDone = true;
                 visibleCount = totalVisibleCharacters;
                 textSentenceTMP.maxVisibleCharacters = visibleCount;
-                DoneTalking(isDone);
-                yield return new WaitForSeconds(1.0f);
+                WhenDoneTalking(isDone);
             }
             counter += 1;
             yield return new WaitForSeconds(textSpeed);
         }
     }
 
-    void DoneTalking(bool isDone)
+    void WhenDoneTalking(bool isDone)
     {
         isCanNext = true;
         if (isAuto)
@@ -398,5 +416,13 @@ public class DialogueManager : MonoBehaviour
 
         if (portraitManager != null)
             portraitManager.CheckTalkingAnimation(dialogueRef, conversationIndex, !isDone);
+
+        StartCoroutine(StopVoiceAudio());
+    }
+
+    IEnumerator StopVoiceAudio()
+    {
+        yield return new WaitForSeconds(0.5f);
+        voiceAudioSource.Stop();
     }
 }

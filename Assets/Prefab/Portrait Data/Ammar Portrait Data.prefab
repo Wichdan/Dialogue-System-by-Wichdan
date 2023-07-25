@@ -44,13 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccebdd6cfed49f945a7b4b49ab1d1994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portrait: {fileID: 21300000, guid: 51306893fca5db34684d99136a124922, type: 3}
-  eyesCharCtrller: {fileID: 22100000, guid: 8256811dfc9fbed4aa63f531a9409245, type: 2}
-  mouthCharCtrller: {fileID: 22100000, guid: e2b28d3716435e5499e0a44ef073f74d, type: 2}
-  talkSfx: {fileID: 0}
   speakerData:
   - speakerName: Ammar
     portrait: {fileID: 21300000, guid: 51306893fca5db34684d99136a124922, type: 3}
     eyesCharCtrller: {fileID: 22100000, guid: 8256811dfc9fbed4aa63f531a9409245, type: 2}
     mouthCharCtrller: {fileID: 22100000, guid: e2b28d3716435e5499e0a44ef073f74d, type: 2}
-    talkSfx: {fileID: 0}
+  talkSfx: {fileID: 8300000, guid: 493167fbd68d40140b6426600a5fbe18, type: 3}

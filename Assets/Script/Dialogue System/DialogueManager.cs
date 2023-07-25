@@ -151,14 +151,13 @@ public class DialogueManager : MonoBehaviour
     //mengecek jika data sudah sampe akhir maka dialog selesai
     void EndConversation()
     {
-        //Debug.Log("End Dialogue!");
         SetTransition(startTransition, false);
+        voiceAudioSource.Stop();
         CheckUpdateSomething();
         if (dialogueRef.isHasChoice)
             SetAndShowChoiceBtn();
         else
             dialoguePanel.SetActive(false);
-
     }
 
     //Digunakan untuk melanjutkan dialog
@@ -249,7 +248,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < dialogueRef.choiceList.Capacity; i++)
         {
             choiceBtn[i].SetActive(true);
-            choiceBtn[i].GetComponentInChildren<TextMeshProUGUI>().text = dialogueRef.choiceList[i].name;
+            choiceBtn[i].GetComponentInChildren<TextMeshProUGUI>().text = dialogueRef.choiceList[i].choiceName;
         }
     }
 

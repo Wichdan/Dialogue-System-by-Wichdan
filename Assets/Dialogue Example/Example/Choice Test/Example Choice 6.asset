@@ -10,22 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fe0a2619e8b06848bef50b53fb6b40e, type: 3}
-  m_Name: Ini pilihan ke satu
+  m_Name: Example Choice 6
   m_EditorClassIdentifier: 
   dialogueData:
   - elementName: Kondisi
     charName: Kamu
-    dialogueSentece: 1
+    dialogueSentece: Salah route
     speakerOrder: 0
     portraitData: {fileID: 0}
+    hasMoreSpeakers: 0
     eyesValue: 0
     mouthValue: 0
     gestureValue: 0
+    voiceActorClip: {fileID: 0}
   autoFillPortraitData: []
-  isHasChoice: 0
-  choiceList: []
+  isHasChoice: 1
+  choiceList:
+  - {fileID: 11400000, guid: de411d2ae937c3f4a8bfa07e9eadc19f, type: 2}
+  - {fileID: 11400000, guid: 1cb1f1fead5267d45b57688debc9f067, type: 2}
   background: {fileID: 21300000, guid: ae4687486b322f549a3b8207d5a91e03, type: 3}
-  isUseBackground: 1
+  altSentenceBG: {fileID: 0}
   isNotUseSentenceBG: 0
-  isUseTransition: 1
-  isUpdateSomething: 1
+  isUseTransition: 0
+  isUpdateSomething: 0
+  choiceName: Pilih kondisi 6

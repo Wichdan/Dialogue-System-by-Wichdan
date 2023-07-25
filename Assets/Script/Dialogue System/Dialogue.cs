@@ -30,6 +30,9 @@ public class Dialogue : ScriptableObject
     [Header("Get/Update Something after dialogue")]
     public bool isUpdateSomething;
 
+    [Header("Choice Button Name")]
+    public string choiceName;
+
     private void OnEnable()
     {
         if (dialogueData == null) return;
